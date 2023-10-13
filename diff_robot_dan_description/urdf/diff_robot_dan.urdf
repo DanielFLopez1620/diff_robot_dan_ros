@@ -1,0 +1,2067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="diff_robot_dan">
+  <link
+    name="base_platform">
+    <inertial>
+      <origin
+        xyz="-4.2767E-06 0.029905 0.0013432"
+        rpy="0 0 0" />
+      <mass
+        value="0.08062" />
+      <inertia
+        ixx="0.00037375"
+        ixy="-1.0976E-08"
+        ixz="-2.7281E-11"
+        iyy="0.00012439"
+        iyz="-7.8943E-07"
+        izz="0.00049795" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/base_platform.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/base_platform.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor_support_left">
+    <inertial>
+      <origin
+        xyz="4.3741E-08 0.0086356 0.0087139"
+        rpy="0 0 0" />
+      <mass
+        value="0.011753" />
+      <inertia
+        ixx="2.3658E-06"
+        ixy="-4.3673E-12"
+        ixz="-2.8469E-11"
+        iyy="1.7995E-06"
+        iyz="-6.6689E-07"
+        izz="1.9957E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_support_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_support_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="support_left_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.05605 -0.05525 0"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_platform" />
+    <child
+      link="motor_support_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_left">
+    <inertial>
+      <origin
+        xyz="-7.2844E-06 -2.8965E-06 -0.0017141"
+        rpy="0 0 0" />
+      <mass
+        value="0.069439" />
+      <inertia
+        ixx="2.1098E-05"
+        ixy="-3.9135E-09"
+        ixz="-3.1834E-09"
+        iyy="2.1088E-05"
+        iyz="-1.4966E-08"
+        izz="4.9519E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_left_to_motor_support"
+    type="fixed">
+    <origin
+      xyz="0 -0.01155 0.020153"
+      rpy="-1.5708 -1.5582 0" />
+    <parent
+      link="motor_support_left" />
+    <child
+      link="motor_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shaft_left">
+    <inertial>
+      <origin
+        xyz="9.3516E-05 -4.0811E-09 0.0062268"
+        rpy="0 0 0" />
+      <mass
+        value="0.0012091" />
+      <inertia
+        ixx="1.7661E-08"
+        ixy="-8.7073E-14"
+        ixz="-2.7402E-10"
+        iyy="1.7488E-08"
+        iyz="-1.1687E-13"
+        izz="2.3255E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/shaft_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/shaft_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_left_to_motor"
+    type="continuous">
+    <origin
+      xyz="9.7282E-05 0 0.026545"
+      rpy="0 0 -1.3474" />
+    <parent
+      link="motor_left" />
+    <child
+      link="shaft_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1.0297"
+      velocity="10.742" />
+  </joint>
+  <link
+    name="coupling_left">
+    <inertial>
+      <origin
+        xyz="-1.758E-08 0.011432 -5.9284E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.015207" />
+      <inertia
+        ixx="7.3793E-07"
+        ixy="-2.821E-12"
+        ixz="4.7539E-13"
+        iyy="2.7775E-07"
+        iyz="-2.0427E-12"
+        izz="7.4797E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/coupling_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.51765 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/coupling_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="coupling_left_to_motor"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0046"
+      rpy="1.5708 0 1.7908" />
+    <parent
+      link="shaft_left" />
+    <child
+      link="coupling_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ring_left">
+    <inertial>
+      <origin
+        xyz="1.4681E-08 -0.0013913 3.3977E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.010918" />
+      <inertia
+        ixx="2.9186E-06"
+        ixy="-5.2164E-12"
+        ixz="-9.9865E-13"
+        iyy="4.8444E-06"
+        iyz="9.3002E-12"
+        izz="2.9187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/ring_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/ring_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_left_to_coupling"
+    type="fixed">
+    <origin
+      xyz="0 0.021355 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="coupling_left" />
+    <child
+      link="ring_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="neumatic_left">
+    <inertial>
+      <origin
+        xyz="-5.051E-08 -1.2407E-06 -3.994E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.039917" />
+      <inertia
+        ixx="1.9377E-05"
+        ixy="2.9484E-13"
+        ixz="1.4146E-13"
+        iyy="3.4105E-05"
+        iyz="6.8997E-12"
+        izz="1.9378E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/neumatic_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/neumatic_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neumatic_left_to_ring"
+    type="fixed">
+    <origin
+      xyz="-8.7612E-05 0.00055 4.2289E-05"
+      rpy="-3.1416 -0.4497 3.1416" />
+    <parent
+      link="ring_left" />
+    <child
+      link="neumatic_left" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_support_right">
+    <inertial>
+      <origin
+        xyz="4.3741E-08 0.0086356 0.0087139"
+        rpy="0 0 0" />
+      <mass
+        value="0.011753" />
+      <inertia
+        ixx="2.3658E-06"
+        ixy="-4.3673E-12"
+        ixz="-2.8469E-11"
+        iyy="1.7995E-06"
+        iyz="-6.6689E-07"
+        izz="1.9957E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_support_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_support_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="support_right_to_base"
+    type="fixed">
+    <origin
+      xyz="0.05605 -0.05525 0"
+      rpy="-3.1416 0 1.5708" />
+    <parent
+      link="base_platform" />
+    <child
+      link="motor_support_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_right">
+    <inertial>
+      <origin
+        xyz="-7.2843E-06 -2.8966E-06 -0.0017141"
+        rpy="0 0 0" />
+      <mass
+        value="0.069439" />
+      <inertia
+        ixx="2.1098E-05"
+        ixy="-3.9135E-09"
+        ixz="-3.1834E-09"
+        iyy="2.1088E-05"
+        iyz="-1.4966E-08"
+        izz="4.9519E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/motor_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_right_to_support"
+    type="fixed">
+    <origin
+      xyz="0 -0.01155 0.02025"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="motor_support_right" />
+    <child
+      link="motor_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shaft_right">
+    <inertial>
+      <origin
+        xyz="9.35164931870833E-05 3.3094464453598E-08 0.0062267898913865"
+        rpy="0 0 0" />
+      <mass
+        value="0.00120914331428052" />
+      <inertia
+        ixx="1.76613856649872E-08"
+        ixy="-8.69060362380142E-14"
+        ixz="-2.74018364433886E-10"
+        iyy="1.74883320817116E-08"
+        iyz="-1.1666347166096E-13"
+        izz="2.32545172058691E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/shaft_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/shaft_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_right_to_motor"
+    type="continuous">
+    <origin
+      xyz="0 0 0.026545"
+      rpy="0 0 -1.8068" />
+    <parent
+      link="motor_right" />
+    <child
+      link="shaft_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1.0297"
+      velocity="10.472" />
+  </joint>
+  <link
+    name="coupling_right">
+    <inertial>
+      <origin
+        xyz="-1.73707862399786E-08 0.0114319692475676 -3.0039553483574E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0152069037997272" />
+      <inertia
+        ixx="7.37926487293068E-07"
+        ixy="-2.80610855598411E-12"
+        ixz="4.83132664105218E-13"
+        iyy="2.77753480931107E-07"
+        iyz="-2.03744847744167E-12"
+        izz="7.47968244758709E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/coupling_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/coupling_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="copling_right_to_shaft"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0046"
+      rpy="1.5708 0 -1.7908" />
+    <parent
+      link="shaft_right" />
+    <child
+      link="coupling_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ring_right">
+    <inertial>
+      <origin
+        xyz="1.4681E-08 -0.0013913 3.3977E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.010918" />
+      <inertia
+        ixx="2.9186E-06"
+        ixy="-5.2164E-12"
+        ixz="-9.9865E-13"
+        iyy="4.8444E-06"
+        iyz="9.3002E-12"
+        izz="2.9187E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/ring_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/ring_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_right_to_coupling"
+    type="fixed">
+    <origin
+      xyz="0 0.021355 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="coupling_right" />
+    <child
+      link="ring_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="neumatic_right">
+    <inertial>
+      <origin
+        xyz="-5.04288356628635E-08 -1.24068466458849E-06 -4.29302794702213E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.039916568660989" />
+      <inertia
+        ixx="1.93774188193623E-05"
+        ixy="2.86801069507243E-13"
+        ixz="1.46766810443803E-13"
+        iyy="3.41045674039519E-05"
+        iyz="6.90707373043649E-12"
+        izz="1.9377801310557E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/neumatic_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/neumatic_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="nuematic_right_to_ring"
+    type="fixed">
+    <origin
+      xyz="0 0.00055 0"
+      rpy="0 -0.4497 0" />
+    <parent
+      link="ring_right" />
+    <child
+      link="neumatic_right" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="battery_holder">
+    <inertial>
+      <origin
+        xyz="-1.9815E-10 4.9468E-10 0.0069931"
+        rpy="0 0 0" />
+      <mass
+        value="0.021448" />
+      <inertia
+        ixx="4.8979E-06"
+        ixy="1.0061E-14"
+        ixz="2.4403E-11"
+        iyy="1.3843E-05"
+        iyz="-6.5693E-15"
+        izz="1.7136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="battery_to_base"
+    type="fixed">
+    <origin
+      xyz="0 -0.07 0.0025"
+      rpy="0 0 0" />
+    <parent
+      link="base_platform" />
+    <child
+      link="battery_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="battery_1">
+    <inertial>
+      <origin
+        xyz="1.398E-08 1.9976E-09 0.00024774"
+        rpy="0 0 0" />
+      <mass
+        value="0.16303" />
+      <inertia
+        ixx="6.0905E-05"
+        ixy="5.9989E-13"
+        ixz="-4.06E-11"
+        iyy="6.0905E-05"
+        iyz="-3.4902E-11"
+        izz="5.8658E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.161 0.435 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="battery_1_to_holder"
+    type="fixed">
+    <origin
+      xyz="0 -0.00975 0.01"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="battery_holder" />
+    <child
+      link="battery_1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="battery_2">
+    <inertial>
+      <origin
+        xyz="1.398E-08 -1.9976E-09 -0.00024774"
+        rpy="0 0 0" />
+      <mass
+        value="0.16303" />
+      <inertia
+        ixx="6.0905E-05"
+        ixy="-5.9989E-13"
+        ixz="4.06E-11"
+        iyy="6.0905E-05"
+        iyz="-3.4902E-11"
+        izz="5.8658E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.161 0.435 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/battery_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="battery_2_to_holder"
+    type="fixed">
+    <origin
+      xyz="0 0.00975 0.01"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="battery_holder" />
+    <child
+      link="battery_2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="arduino">
+    <inertial>
+      <origin
+        xyz="-0.0038426 0.0032752 -6.6854E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.036702" />
+      <inertia
+        ixx="1.0144E-05"
+        ixy="5.699E-07"
+        ixz="-1.3819E-07"
+        iyy="2.5461E-05"
+        iyz="2.0305E-08"
+        izz="1.6029E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/arduino.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.161 0.435 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/arduino.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arduino_to_base"
+    type="fixed">
+    <origin
+      xyz="0.001 0.0149 0.0025"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_platform" />
+    <child
+      link="arduino" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="driver">
+    <inertial>
+      <origin
+        xyz="-0.00053794 0.0010488 0.0067706"
+        rpy="0 0 0" />
+      <mass
+        value="0.021255" />
+      <inertia
+        ixx="4.3343E-06"
+        ixy="-1.4594E-07"
+        ixz="-3.4291E-09"
+        iyy="3.3344E-06"
+        iyz="-7.0259E-07"
+        izz="5.8242E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/driver.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894 0.039 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/driver.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driver_to_base"
+    type="fixed">
+    <origin
+      xyz="0 0.07415 0.0025"
+      rpy="0 0 0" />
+    <parent
+      link="base_platform" />
+    <child
+      link="driver" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_s1">
+    <inertial>
+      <origin
+        xyz="-3.873E-08 -1.4267E-09 0.0089627"
+        rpy="0 0 0" />
+      <mass
+        value="0.00039676" />
+      <inertia
+        ixx="1.1512E-08"
+        ixy="3.4795E-15"
+        ixz="1.7979E-15"
+        iyy="1.1511E-08"
+        iyz="5.6571E-15"
+        izz="1.948E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_s1_to_base"
+    type="fixed">
+    <origin
+      xyz="0.01285 0.1025 0"
+      rpy="-3.1416 0 0.5236" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_s1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_s2">
+    <inertial>
+      <origin
+        xyz="-3.873E-08 -1.4267E-09 0.0089627"
+        rpy="0 0 0" />
+      <mass
+        value="0.00039676" />
+      <inertia
+        ixx="1.1512E-08"
+        ixy="3.4795E-15"
+        ixz="1.7979E-15"
+        iyy="1.1511E-08"
+        iyz="5.6571E-15"
+        izz="1.948E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_s2_to_base"
+    type="fixed">
+    <origin
+      xyz="0.01285 0.1225 -0.0179"
+      rpy="0 0 -0.5236" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_s2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_s3">
+    <inertial>
+      <origin
+        xyz="-3.7544E-08 -2.1128E-09 0.0089627"
+        rpy="0 0 0" />
+      <mass
+        value="0.00039676" />
+      <inertia
+        ixx="1.1512E-08"
+        ixy="3.3218E-15"
+        ixz="1.8189E-15"
+        iyy="1.1511E-08"
+        iyz="5.6406E-15"
+        izz="1.948E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_s3_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.01285 0.1025 0"
+      rpy="-3.1416 0 2.618" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_s3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_s4">
+    <inertial>
+      <origin
+        xyz="-3.7544E-08 -2.1128E-09 0.0089627"
+        rpy="0 0 0" />
+      <mass
+        value="0.00039676" />
+      <inertia
+        ixx="1.1512E-08"
+        ixy="3.3218E-15"
+        ixz="1.8189E-15"
+        iyy="1.1511E-08"
+        iyz="5.6406E-15"
+        izz="1.948E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_s4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_s4_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.01285 0.1225 -0.0179"
+      rpy="0 0 -2.618" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_s4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="center_wheel_support">
+    <inertial>
+      <origin
+        xyz="-7.8425E-12 0.0025704 -1.0795E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.010585" />
+      <inertia
+        ixx="6.8468E-07"
+        ixy="4.0238E-17"
+        ixz="-7.8111E-14"
+        iyy="1.2612E-06"
+        iyz="-3.3077E-14"
+        izz="6.2217E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/center_wheel_support.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/center_wheel_support.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="center_support_to_base"
+    type="fixed">
+    <origin
+      xyz="0 0.1125 -0.0179"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="base_platform" />
+    <child
+      link="center_wheel_support" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="roll_support">
+    <inertial>
+      <origin
+        xyz="-0.0059893 0.0047248 3.4874E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.016331" />
+      <inertia
+        ixx="1.5018E-06"
+        ixy="3.2726E-07"
+        ixz="-1.7434E-13"
+        iyy="2.2832E-06"
+        iyz="-3.5076E-13"
+        izz="1.5926E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/roll_support.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/roll_support.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roll_support_to_wheel_support"
+    type="fixed">
+    <origin
+      xyz="0 0.004693 0"
+      rpy="0 0.066802 0" />
+    <parent
+      link="center_wheel_support" />
+    <child
+      link="roll_support" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="central_shaft">
+    <inertial>
+      <origin
+        xyz="0 -2.7756E-17 2.4286E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0031416" />
+      <inertia
+        ixx="1.0963E-07"
+        ixy="2.647E-23"
+        ixz="1.7288E-22"
+        iyy="1.0963E-07"
+        iyz="6.4184E-23"
+        izz="9.8175E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/central_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/central_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_to_roll_support"
+    type="continuous">
+    <origin
+      xyz="-0.016111 0.018272 4.708E-05"
+      rpy="0 0 -0.77638" />
+    <parent
+      link="roll_support" />
+    <child
+      link="central_shaft" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="central_wheel">
+    <inertial>
+      <origin
+        xyz="-5.2042E-18 1.641E-14 -4.2882E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0043493" />
+      <inertia
+        ixx="4.2486E-07"
+        ixy="-9.9282E-22"
+        ixz="2.0349E-22"
+        iyy="2.6998E-07"
+        iyz="-1.1978E-21"
+        izz="2.6998E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/central_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/central_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="central_wheel_to_shaft"
+    type="continuous">
+    <origin
+      xyz="0 0 1.4798E-05"
+      rpy="2.4245 1.5708 0" />
+    <parent
+      link="central_shaft" />
+    <child
+      link="central_wheel" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="sup_platform">
+    <inertial>
+      <origin
+        xyz="-9.3058E-10 -8.7809E-06 0.00125"
+        rpy="0 0 0" />
+      <mass
+        value="0.026875" />
+      <inertia
+        ixx="3.4898E-05"
+        ixy="2.6462E-14"
+        ixz="-1.1073E-19"
+        iyy="1.6106E-05"
+        iyz="2.362E-15"
+        izz="5.0976E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/sup_platform.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/sup_platform.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sup_platform_to_base"
+    type="fixed">
+    <origin
+      xyz="0 0.0325 0.0424"
+      rpy="0 0 0" />
+    <parent
+      link="base_platform" />
+    <child
+      link="sup_platform" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="raspberry">
+    <inertial>
+      <origin
+        xyz="-0.012157 0.00086825 0.0050276"
+        rpy="0 0 0" />
+      <mass
+        value="0.040232" />
+      <inertia
+        ixx="1.1791E-05"
+        ixy="-8.0579E-08"
+        ixz="2.863E-06"
+        iyy="2.6906E-05"
+        iyz="-5.6994E-07"
+        izz="3.6557E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/raspberry.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.741 0.098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/raspberry.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="raspberry_to_sup_base"
+    type="fixed">
+    <origin
+      xyz="0.0023552 -0.030064 0.0025"
+      rpy="-0.061358 0 1.5708" />
+    <parent
+      link="sup_platform" />
+    <child
+      link="raspberry" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_base">
+    <inertial>
+      <origin
+        xyz="4.76737475267162E-09 -2.34376004715209E-10 0.00517211597652074"
+        rpy="0 0 0" />
+      <mass
+        value="0.0170174944442866" />
+      <inertia
+        ixx="2.30741133256961E-06"
+        ixy="-1.10315764453569E-07"
+        ixz="-1.3170258630919E-12"
+        iyy="2.87577287694704E-06"
+        iyz="1.11832991479685E-13"
+        izz="4.78074170602697E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/lidar_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/lidar_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_base_to_sup_base"
+    type="fixed">
+    <origin
+      xyz="0 0.042 0.0025"
+      rpy="0 0 0" />
+    <parent
+      link="sup_platform" />
+    <child
+      link="lidar_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="-8.65987423912112E-05 3.00342080120973E-07 -0.0158709631049187"
+        rpy="0 0 0" />
+      <mass
+        value="0.0583443536768669" />
+      <inertia
+        ixx="1.11767591923787E-05"
+        ixy="8.19309373146885E-08"
+        ixz="6.12677214969589E-08"
+        iyy="1.1094235674574E-05"
+        iyz="3.01401445393558E-10"
+        izz="1.24859796770116E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_to_lidar_base"
+    type="fixed">
+    <origin
+      xyz="0 0 0.01"
+      rpy="-3.1416 0 -1.5708" />
+    <parent
+      link="lidar_base" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="power_bank_support">
+    <inertial>
+      <origin
+        xyz="-4.3276E-10 -0.034501 -0.018512"
+        rpy="0 0 0" />
+      <mass
+        value="0.054871" />
+      <inertia
+        ixx="5.3299E-05"
+        ixy="6.7817E-15"
+        ixz="3.5306E-13"
+        iyy="0.00010525"
+        iyz="1.0405E-09"
+        izz="0.0001506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/power_bank_support.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/power_bank_support.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="power_support_to_base"
+    type="fixed">
+    <origin
+      xyz="0 0.059586 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_platform" />
+    <child
+      link="power_bank_support" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="power_bank">
+    <inertial>
+      <origin
+        xyz="-0.00068925 -1.3878E-17 0.0080025"
+        rpy="0 0 0" />
+      <mass
+        value="0.20175" />
+      <inertia
+        ixx="8.2243E-05"
+        ixy="-1.4837E-18"
+        ixz="-3.5118E-08"
+        iyy="0.00035012"
+        iyz="3.8612E-13"
+        izz="0.00042374" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/power_bank.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/power_bank.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="power_bank_to_support"
+    type="fixed">
+    <origin
+      xyz="0 -0.03475 -0.023"
+      rpy="0 0 0" />
+    <parent
+      link="power_bank_support" />
+    <child
+      link="power_bank" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="9.7623E-09 0.0001601 -0.0081003"
+        rpy="0 0 0" />
+      <mass
+        value="0.02241" />
+      <inertia
+        ixx="6.8681E-06"
+        ixy="-2.8862E-12"
+        ixz="6.9612E-14"
+        iyy="5.8417E-06"
+        iyz="1.5201E-06"
+        izz="4.866E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_to_base"
+    type="fixed">
+    <origin
+      xyz="0 0.15525 0.0323"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_platform" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m1">
+    <inertial>
+      <origin
+        xyz="-1.2775E-08 6.9871E-10 0.018649"
+        rpy="0 0 0" />
+      <mass
+        value="0.010437" />
+      <inertia
+        ixx="1.4892E-06"
+        ixy="5.2591E-15"
+        ixz="3.3325E-12"
+        iyy="1.4892E-06"
+        iyz="3.8585E-13"
+        izz="5.171E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.51765 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m1_to_base"
+    type="fixed">
+    <origin
+      xyz="0.0375 -0.025 0.0025"
+      rpy="0 0 2.618" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m2">
+    <inertial>
+      <origin
+        xyz="-1.28962488465945E-08 4.87893031531073E-10 0.0186494267227174"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104370763004655" />
+      <inertia
+        ixx="1.48922995809896E-06"
+        ixy="3.89533633544294E-15"
+        ixz="3.35524402215023E-12"
+        iyy="1.48922882736901E-06"
+        iyz="4.25322339240719E-13"
+        izz="5.17103699125775E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m2_to_base"
+    type="fixed">
+    <origin
+      xyz="0.0375 0.0325 0.0025"
+      rpy="0 0 -2.618" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m3">
+    <inertial>
+      <origin
+        xyz="-1.27745335698481E-08 6.9871051999737E-10 0.0186494267227175"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104370763004665" />
+      <inertia
+        ixx="1.48922995829572E-06"
+        ixy="5.25911840813087E-15"
+        ixz="3.3324538622836E-12"
+        iyy="1.48922882572881E-06"
+        iyz="3.85848631953205E-13"
+        izz="5.17103684689377E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m3_to_base"
+    type="fixed">
+    <origin
+      xyz="0.0375 0.09 0.0025"
+      rpy="0 0 -0.5236" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m4">
+    <inertial>
+      <origin
+        xyz="-1.28962490131279E-08 4.8789312520614E-10 0.0186494267227175"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104370763004655" />
+      <inertia
+        ixx="1.48922995809896E-06"
+        ixy="3.89533628250338E-15"
+        ixz="3.35524403420148E-12"
+        iyy="1.48922882736901E-06"
+        iyz="4.25322332714478E-13"
+        izz="5.17103699125778E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m4_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.0375 -0.025 0.0025"
+      rpy="0 0 0.5236" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m5">
+    <inertial>
+      <origin
+        xyz="-1.27745337988316E-08 6.98710408975067E-10 0.0186494267227175"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104370763004664" />
+      <inertia
+        ixx="1.48922995829569E-06"
+        ixy="5.25911835519131E-15"
+        ixz="3.33245387880175E-12"
+        iyy="1.48922882572878E-06"
+        iyz="3.85848640885222E-13"
+        izz="5.17103684689375E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m5_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.0375 0.0325 0.0025"
+      rpy="0 0 -0.5236" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hex_support_m6">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan/meshes/hex_support_m6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hex_support_m6_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.0375 0.09 0.0025"
+      rpy="0 0 -2.618" />
+    <parent
+      link="base_platform" />
+    <child
+      link="hex_support_m6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
