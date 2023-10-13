@@ -463,7 +463,7 @@
     type="fixed">
     <origin
       xyz="0 -0.01155 0.02025"
-      rpy="1.5708 1.5708 0" />
+      rpy="1.5708 1.5708 -3.1416" />
     <parent
       link="motor_support_right" />
     <child
@@ -1258,7 +1258,7 @@
   </link>
   <joint
     name="roll_support_to_wheel_support"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="0 0.004693 0"
       rpy="0 0.066802 0" />
@@ -1267,7 +1267,7 @@
     <child
       link="roll_support" />
     <axis
-      xyz="0 0 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="central_shaft">
@@ -1314,13 +1314,13 @@
     type="continuous">
     <origin
       xyz="-0.016111 0.018272 4.708E-05"
-      rpy="0 0 -0.77638" />
+      rpy="0 0 0" />
     <parent
       link="roll_support" />
     <child
       link="central_shaft" />
     <axis
-      xyz="0 0 0" />
+      xyz="0 0 1" />
   </joint>
   <link
     name="central_wheel">
@@ -1364,7 +1364,7 @@
   </link>
   <joint
     name="central_wheel_to_shaft"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0 1.4798E-05"
       rpy="2.4245 1.5708 0" />
@@ -1373,7 +1373,7 @@
     <child
       link="central_wheel" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 0 0" />
   </joint>
   <link
     name="sup_platform">
