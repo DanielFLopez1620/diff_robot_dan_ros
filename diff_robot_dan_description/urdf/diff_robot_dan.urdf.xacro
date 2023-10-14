@@ -1267,6 +1267,18 @@
     <axis
       xyz="0 1 0" />
   </joint>
+  <joint
+    name="shaft_to_roll_support"
+    type="continuous">
+    <origin
+      xyz="-0.016111 0.018272 4.708E-05"
+      rpy="0 0 0" />
+    <parent
+      link="roll_support" />
+    <child
+      link="central_shaft" />
+    <axis
+      xyz="0 0 1" />
   <link
     name="central_shaft">
     <inertial>
@@ -1307,18 +1319,6 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="shaft_to_roll_support"
-    type="continuous">
-    <origin
-      xyz="-0.016111 0.018272 4.708E-05"
-      rpy="0 0 0" />
-    <parent
-      link="roll_support" />
-    <child
-      link="central_shaft" />
-    <axis
-      xyz="0 0 1" />
   </joint>
   <link
     name="central_wheel">
