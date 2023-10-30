@@ -1,7 +1,6 @@
-# Author: Addison Sears-Collins
-# Date: September 14, 2021
-# Description: Launch a two-wheeled robot URDF file using Rviz.
-# https://automaticaddison.com
+# Original Author: Addison Sears-Collins | Automatic Addison
+# Modified by: DanielFLopez1620
+# Description: Launch a differential robot for the visualization model.
  
 import os
 from launch import LaunchDescription
@@ -20,7 +19,7 @@ def generate_launch_description():
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
  
   # Set the path to the URDF file
-  default_urdf_model_path = os.path.join(pkg_share, 'urdf/diff_robot_dan.urdf')
+  default_urdf_model_path = os.path.join(pkg_share, 'urdf/diff_robot_dan.xacro')
  
   ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############  
   # Launch configuration variables specific to simulation
