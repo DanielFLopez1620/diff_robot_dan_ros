@@ -3,6 +3,8 @@
   name="diff_robot_dan_description_core" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <xacro:include filename="$(find diff_robot_dan_description)/urdf/materials_and_colors.xacro"/>
+
   <link name="base_link"/>
   
   <link
@@ -29,11 +31,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/base_platform.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.75294 0.75294 0.75294 1" />
-      </material>
+      <material name="grey_pla"/>
     </visual>
     <collision>
       <origin
@@ -84,11 +82,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -137,11 +131,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -190,11 +180,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/shaft_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -246,11 +232,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/coupling_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.51765 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -299,11 +281,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/ring_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0 0 1 1" />
-      </material>
+      <material name="blue_metal"/>
     </visual>
     <collision>
       <origin
@@ -352,11 +330,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/neumatic_left.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.29804 0.29804 0.29804 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -405,11 +379,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -458,11 +428,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -511,11 +477,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/shaft_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -567,11 +529,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/coupling_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.517647058823529 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -620,11 +578,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/ring_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0 0 1 1" />
-      </material>
+      <material name="blue_metal"/>
     </visual>
     <collision>
       <origin
@@ -673,11 +627,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/neumatic_right.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -726,11 +676,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/battery_holder.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.25098 0.25098 0.25098 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -779,11 +725,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/battery_1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.161 0.435 1 1" />
-      </material>
+      <material name="blue_electronic"/>
     </visual>
     <collision>
       <origin
@@ -832,11 +774,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/battery_2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.161 0.435 1 1" />
-      </material>
+      <material name="blue_electronic"/>
     </visual>
     <collision>
       <origin
@@ -885,11 +823,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/arduino.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.161 0.435 1 1" />
-      </material>
+      <material name="blue_electronic"/>
     </visual>
     <collision>
       <origin
@@ -938,11 +872,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/driver.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.894 0.039 0 1" />
-      </material>
+      <material name="red_electronic"/>
     </visual>
     <collision>
       <origin
@@ -991,11 +921,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_s1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1044,11 +970,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_s2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1097,11 +1019,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_s3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1150,11 +1068,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_s4.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1203,11 +1117,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/center_wheel_support.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -1256,11 +1166,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/roll_support.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -1309,11 +1215,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/central_shaft.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
-      </material>
+      <material name="silver_metal"/>
     </visual>
     <collision>
       <origin
@@ -1362,11 +1264,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/central_wheel.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.25098 0.25098 0.25098 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -1415,11 +1313,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/sup_platform.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="grey_pla"/>
     </visual>
     <collision>
       <origin
@@ -1468,11 +1362,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/raspberry.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0 0.741 0.098 1" />
-      </material>
+      <material name="green_electronic"/>
     </visual>
     <collision>
       <origin
@@ -1521,11 +1411,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/lidar_base.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
+      <material name="grey_pla"/>
     </visual>
     <collision>
       <origin
@@ -1574,11 +1460,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/lidar.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -1627,11 +1509,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/power_bank_support.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.75294 0.75294 0.75294 1" />
-      </material>
+      <material name="grey_pla"/>
     </visual>
     <collision>
       <origin
@@ -1680,11 +1558,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/power_bank.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin
@@ -1733,11 +1607,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/camera.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.25098 0.25098 0.25098 1" />
-      </material>
+      <material name="black"/>
     </visual>
     <collision>
       <origin
@@ -1786,11 +1656,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.51765 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1839,11 +1705,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.517647058823529 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1892,11 +1754,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.517647058823529 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1945,11 +1803,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m4.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.517647058823529 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -1998,11 +1852,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m5.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.517647058823529 0 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin
@@ -2051,11 +1901,7 @@
         <mesh
           filename="package://diff_robot_dan_description/meshes/hex_support_m6.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="brass"/>
     </visual>
     <collision>
       <origin

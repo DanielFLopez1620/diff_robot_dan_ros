@@ -16,7 +16,7 @@ def generate_launch_description():
   pkg_share = FindPackageShare(package='diff_robot_dan_description').find('diff_robot_dan_description')
  
   # Set the path to the RViz configuration settings
-  default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
+  default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_robot_model.rviz')
  
   # Set the path to the URDF file
   default_urdf_model_path = os.path.join(pkg_share, 'urdf/diff_robot_dan.xacro')
