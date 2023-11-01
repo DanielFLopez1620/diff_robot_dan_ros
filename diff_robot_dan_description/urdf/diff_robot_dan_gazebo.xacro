@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="diff_robot_dan_gazebo">
+
+    <gazebo reference="base_platform">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="motor_support_left">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="motor_left">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="shaft_left">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="coupling_left">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="ring_left">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <gazebo reference="neumatic_left">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+
+</robot>
