@@ -22,6 +22,82 @@
     <gazebo reference="neumatic_left">
         <material>Gazebo/Black</material>
     </gazebo>
-
-
+    <gazebo reference="battery_holder">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="battery_1">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="battery_2">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="arduino">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="driver">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="hex_support_s1">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_s2">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_s3">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_s4">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="center_wheel_support">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="roll_support">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="central_shaft">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="center_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="sup_platform">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="raspberry">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="lidar_base">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="lidar">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="power_bank_support">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="power_bank">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="camera">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="hex_support_m1">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_m2">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_m3">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_m4">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_m5">
+        <material>Gazebo/Gold</material>
+    </gazebo>
+    <gazebo reference="hex_support_m6">
+        <material>Gazebo/Gold</material>
+    </gazebo>
 </robot>
