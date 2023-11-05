@@ -15,7 +15,7 @@ def generate_launch_description():
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(description_package),'launch','display_model.launch.py'
+                    get_package_share_directory(description_package),'launch','robot_description.launch.py'
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
@@ -31,7 +31,7 @@ def generate_launch_description():
                                    '-entity', 'diff_robot_dan',
                                     '-x', '0',
                                     '-y', '0',
-                                    '-z', '0.1'],
+                                    '-z', '0.15'],
                         output='screen')
 
 

@@ -2,8 +2,26 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="diff_robot_dan_controllers">
 
     <gazebo reference="central_wheel">
-        <mu1 value="0.01"/>
-        <mu2 value="0.01"/>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
+    <gazebo reference="neumatic_right">
+        <mu1 value="0.1"/>
+        <mu2 value="0.1"/>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+    </gazebo>
+
+    <gazebo reference="neumatic_left">
+        <mu1 value="0.1"/>
+        <mu2 value="0.1"/>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
     </gazebo>
 
     <gazebo>
@@ -15,7 +33,7 @@
             <wheel_diameter>0.06528</wheel_diameter>
 
             <!-- Limits -->
-            <max_wheel_torque>100</max_wheel_torque>
+            <max_wheel_torque>10</max_wheel_torque>
             <max_wheel_acceleration>10.0</max_wheel_acceleration>
 
             <!-- Output -->
