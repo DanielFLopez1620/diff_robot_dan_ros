@@ -500,7 +500,7 @@
     <child
       link="shaft_right" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       effort="1.0297"
       velocity="10.472" />
