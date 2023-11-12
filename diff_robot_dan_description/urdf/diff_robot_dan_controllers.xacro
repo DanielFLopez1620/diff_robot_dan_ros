@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="diff_robot_dan_controllers">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo reference="central_wheel">
         <mu1 value="0.001"/>

@@ -2,7 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="diff_robot_dan">
 
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_core.urdf.xacro"/>
+    
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_gazebo.xacro"/>
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_controllers.xacro"/>
+    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_sensors.xacro"/>
     
 </robot>
