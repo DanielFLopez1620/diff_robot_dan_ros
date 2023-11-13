@@ -1586,7 +1586,7 @@
     <inertial>
       <origin
         xyz="9.7623E-09 0.0001601 -0.0081003"
-        rpy="0 0 0" />
+        rpy="0 0 1.5707" />
       <mass
         value="0.02241" />
       <inertia
@@ -1600,7 +1600,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 1.5707" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/camera.STL" />
@@ -1622,7 +1622,7 @@
     type="fixed">
     <origin
       xyz="0 0.15525 0.0323"
-      rpy="0 0 3.1416" />
+      rpy="0 0 1.5707" />
     <parent
       link="base_platform" />
     <child
