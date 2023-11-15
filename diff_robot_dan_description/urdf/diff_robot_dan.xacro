@@ -4,7 +4,8 @@
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_core.urdf.xacro"/>
     
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_gazebo.xacro"/>
-    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_controllers.xacro"/>
+    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_ros2_control.xacro"/>
+    <!--xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_controllers.xacro"/-->
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_sensors.xacro"/>
     
 </robot>
