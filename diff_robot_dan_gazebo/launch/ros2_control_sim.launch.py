@@ -48,51 +48,37 @@ def generate_launch_description():
                                     '-y', '0',
                                     '-z', '0.15'],
                         output='screen')
-    """
+    
+    
+    
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["diff_dan_robot_controller", "--controller-manager", "/controller_manager"],
+        arguments=["diff_dan_robot_controller"],
     )
 
     
     joint_broad_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_state_broadcaster" , "--controller-manager", "/controller_manager"],
-    )
-    
-    rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        output="log",
-        condition=IfCondition(gui),
-    )
-    """
-    delayed_controller_manager_spawner = TimerAction(
-        period=30.0,
-        actions=[
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=["diff_dan_robot_controller", "--controller-manager", "/controller_manager"],
-            ),
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=["joint_state_broadcaster" , "--controller-manager", "/controller_manager"],
-            )
-        ],
+        arguments=["joint_state_broadcaster"],
     )
 
+    
+    
+    delayed_diff_drive_spawner = RegisterEventHandler(
+        event_handler=OnProcessExit(
+        target_action=spawn_entity,
+        on_exit=[diff_drive_spawner],
+        )
+    )
+    
     # Launch them all!
     return LaunchDescription([
         diff_robot_description,
         gazebo,
         spawn_entity,
-        delayed_controller_manager_spawner
         #diff_drive_spawner,
-        #joint_broad_spawner,
-        #rviz_node
+        delayed_diff_drive_spawner,
+        joint_broad_spawner,
     ])
