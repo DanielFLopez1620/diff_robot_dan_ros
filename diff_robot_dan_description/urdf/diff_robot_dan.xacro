@@ -1,11 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="diff_robot_dan">
 
-    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_core.urdf.xacro"/>
-    
+    <xacro:arg name="use_ros2_control" default="true"/>
+
+    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_core.urdf.xacro"/>    
+    <xacro:if value="$(arg use_ros2_control)">
+        <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_ros2_control.xacro"/>
+    </xacro:if>
+
+    <xacro:unless value="$(arg use_ros2_control)">
+        <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_controllers.xacro"/>
+    </xacro:unless>
+
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_gazebo.xacro"/>
-    <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_ros2_control.xacro"/>
-    <!--xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_controllers.xacro"/-->
     <xacro:include filename="$(find diff_robot_dan_description)/urdf/diff_robot_dan_sensors.xacro"/>
     
 </robot>

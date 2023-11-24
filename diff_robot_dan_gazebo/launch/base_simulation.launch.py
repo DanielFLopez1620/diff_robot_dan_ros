@@ -3,7 +3,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, ExecuteProcess
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
@@ -31,7 +31,7 @@ def generate_launch_description():
                                    '-entity', 'diff_robot_dan',
                                     '-x', '0',
                                     '-y', '0',
-                                    '-z', '0.1'],
+                                    '-z', '0.06'],
                         output='screen')
 
 

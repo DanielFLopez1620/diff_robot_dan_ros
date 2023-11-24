@@ -3,6 +3,8 @@
 
   <xacro:include filename="$(find diff_robot_dan_description)/urdf/materials_and_colors.xacro"/>
 
+  <xacro:property name="caster_type" value="continuous" />
+
   <link name="base_link"/>
   
   <link
@@ -1178,7 +1180,7 @@
   </link>
   <joint
     name="roll_support_to_wheel_support"
-    type="continuous">
+    type="${caster_type}">
     <origin
       xyz="0 0.004693 0"
       rpy="0 0.066802 0" />
@@ -1227,7 +1229,7 @@
   </link>
   <joint
     name="shaft_to_roll_support"
-    type="continuous">
+    type="${caster_type}">
     <origin
       xyz="-0.016111 0.018272 4.708E-05"
       rpy="0 0 0" />
@@ -1610,7 +1612,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 1.5707" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/camera.STL" />
