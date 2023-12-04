@@ -306,6 +306,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  
   <link
     name="neumatic_left">
     <inertial>
@@ -337,11 +338,11 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://diff_robot_dan_description/meshes/neumatic_left.STL" />
+        <sphere radius="0.03394"/>
       </geometry>
     </collision>
   </link>
+
   <joint
     name="neumatic_left_to_ring"
     type="fixed">
@@ -634,8 +635,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://diff_robot_dan_description/meshes/neumatic_right.STL" />
+        <sphere radius="0.03394"/>
       </geometry>
     </collision>
   </link>

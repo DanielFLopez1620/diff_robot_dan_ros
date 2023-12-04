@@ -34,8 +34,6 @@ def generate_launch_description():
                                     '-z', '0.06'],
                         output='screen')
 
-
-
     # Launch them all!
     return LaunchDescription([
         diff_robot_description,
