@@ -55,7 +55,7 @@ def generate_launch_description():
                         output='screen')
     
     
-    
+    """
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -77,13 +77,31 @@ def generate_launch_description():
         on_exit=[diff_drive_spawner],
         )
     )
+    """
+
+    delayed_controller_manager_spawner = TimerAction(
+        period=10.0,
+        actions=[
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["diff_dan_robot_controller"],
+            ),
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["joint_state_broadcaster",]
+            )
+        ],
+    )
     
     # Launch them all!
     return LaunchDescription([
         diff_robot_description,
         gazebo,
         spawn_entity,
-        diff_drive_spawner,
+        # diff_drive_spawner,
         # delayed_diff_drive_spawner,
-        joint_broad_spawner,
+        # joint_broad_spawner,
+        delayed_controller_manager_spawner,
     ])
