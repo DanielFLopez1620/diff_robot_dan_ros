@@ -2,27 +2,27 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo reference="central_wheel">
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
+        <mu1 value="0.0"/>
+        <mu2 value="0.0"/>
     </gazebo>
 
     <gazebo reference="neumatic_right">
         <mu1 value="0.1"/>
         <mu2 value="0.1"/>
-        <kp>500000.0</kp>
-        <kd>10.0</kd>
+        <kp>1.0</kp>
+        <kd>0.0</kd>
         <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
+        <maxVel>0.2</maxVel>
     </gazebo>
 
-    <gazebo reference="neumatic_left">
+    <!gazebo reference="neumatic_left">
         <mu1 value="0.1"/>
         <mu2 value="0.1"/>
-        <kp>500000.0</kp>
-        <kd>10.0</kd>
+        <kp>1.0</kp>
+        <kd>0.0</kd>
         <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-    </gazebo>
+        <maxVel>0.2</maxVel>
+    </!gazebo>
 
     <gazebo>
         <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
