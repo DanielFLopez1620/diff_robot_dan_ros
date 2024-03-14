@@ -105,4 +105,27 @@
     <gazebo reference="camera">
         <material>Gazebo/DarkGrey</material>
     </gazebo>
+
+    <gazebo reference="central_wheel">
+        <mu1 value="0.01"/>
+        <mu2 value="0.01"/>
+    </gazebo>
+
+    <gazebo reference="neumatic_right">
+        <mu1 value="0.1"/>
+        <mu2 value="0.1"/>
+        <kp>1.0</kp>
+        <kd>0.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.2</maxVel>
+    </gazebo>
+
+    <gazebo reference="neumatic_left">
+        <mu1 value="0.1"/>
+        <mu2 value="0.1"/>  
+        <kp>1.0</kp>
+        <kd>0.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.2</maxVel>
+    </gazebo>
 </robot>

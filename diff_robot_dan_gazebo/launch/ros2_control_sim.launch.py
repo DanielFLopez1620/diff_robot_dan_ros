@@ -54,7 +54,7 @@ def generate_launch_description():
                                    '-entity', 'diff_robot_dan',
                                     '-x', '0',
                                     '-y', '0',
-                                    '-z', '0.06'],
+                                    '-z', '0.08'],
                         output='screen')
     
     
