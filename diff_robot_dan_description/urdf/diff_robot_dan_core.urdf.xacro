@@ -88,7 +88,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_left.STL" />
@@ -98,7 +98,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_left.STL" />
@@ -110,7 +110,7 @@
     type="fixed">
     <origin
       xyz="-0.05605 -0.05525 0"
-      rpy="3.1416 0 -1.5708" />
+      rpy="0 1.5708 3.1416" />
     <parent
       link="base_platform" />
     <child
@@ -158,8 +158,8 @@
     name="motor_left_to_motor_support"
     type="fixed">
     <origin
-      xyz="0 -0.01155 0.020153"
-      rpy="-1.5708 -1.5582 0" />
+      xyz="0.02025 0 -0.01155"
+      rpy="0 0 -3.1416" />
     <parent
       link="motor_support_left" />
     <child
@@ -388,7 +388,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_right.STL" />
@@ -398,7 +398,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_right.STL" />
@@ -410,7 +410,7 @@
     type="fixed">
     <origin
       xyz="0.05605 -0.05525 0"
-      rpy="-3.1416 0 1.5708" />
+      rpy="0 1.5708 0" />
     <parent
       link="base_platform" />
     <child
@@ -458,8 +458,8 @@
     name="motor_right_to_support"
     type="fixed">
     <origin
-      xyz="0 -0.01155 0.02025"
-      rpy="1.5708 1.5708 -3.1416" />
+      xyz="0.02025 0 -0.01155"
+      rpy="0 0 -3.1416" />
     <parent
       link="motor_support_right" />
     <child
