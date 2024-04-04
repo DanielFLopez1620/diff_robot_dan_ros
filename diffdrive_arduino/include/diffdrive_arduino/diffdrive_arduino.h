@@ -1,59 +1,80 @@
 #ifndef DIFFDRIVE_ARDUINO_REAL_ROBOT_H
 #define DIFFDRIVE_ARDUINO_REAL_ROBOT_H
 
+// --------------- CPP standard headers required ------------------------------
 #include <cstring>
-#include "rclcpp/rclcpp.hpp"
 
+// ---------------- ROS2 headers requried -------------------------------------
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_lifecycle/state.hpp"
+
+// ------------ ROS2 Controller for hardware interface required ---------------
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/handle.hpp"
 #include "hardware_interface/hardware_info.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
-#include "rclcpp_lifecycle/state.hpp"
 
+// ------------ Other's controller dependencies -------------------------------
 #include "config.h"
 #include "wheel.h"
 #include "arduino_comms.h"
 
+
+// -------------- Namespaces of the program -----------------------------------
 using hardware_interface::return_type;
 
+
+// --------------------- Class for hardware interface -------------------------
 class DiffDriveArduino : public hardware_interface::SystemInterface
 {
-
-
 public:
-  DiffDriveArduino();
+    // Basic void constructor
+    DiffDriveArduino();
 
-  CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override;
+    // For members initialization and set parameters
+    CallbackReturn on_init(const hardware_interface::HardwareInfo & info) 
+        override;
 
-  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
+    // Define and export hardware states
+    std::vector<hardware_interface::StateInterface> export_state_interfaces() 
+        override;
 
-  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+    // Define and export commands for hardware
+    std::vector<hardware_interface::CommandInterface> export_command_interfaces() 
+        override;
 
-  CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override;
+    // For usage when 'power' is enabled.
+    CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) 
+        override;
 
-  CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override;
+    // For usage when 'power' is disabled.
+    CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) 
+        override;
 
-  hardware_interface::return_type read(
-    const rclcpp::Time & time, const rclcpp::Duration & period) override;
+    // Update the states of the hardware (Getter)
+    hardware_interface::return_type read(
+        const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
-  hardware_interface::return_type write(
-    const rclcpp::Time & time, const rclcpp::Duration & period) override;
-
-
+    // Commands the hardware based on the states acquired.
+    hardware_interface::return_type write(
+        const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
+    // Configuration object needed to set the serial communication
+    Config cfg_;
 
-  Config cfg_;
-  ArduinoComms arduino_;
+    // Instance object that contains the methods for the serial commands.
+    ArduinoComms arduino_;
 
-  Wheel l_wheel_;
-  Wheel r_wheel_;
+    // Instance two wheel objects (differential robot)
+    Wheel l_wheel_;
+    Wheel r_wheel_;
 
-  rclcpp::Logger logger_;
+    // Define a logger for displaying info
+    rclcpp::Logger logger_;
 
-  std::chrono::time_point<std::chrono::system_clock> time_;
-  
+    // Create a time object from chrono
+    std::chrono::time_point<std::chrono::system_clock> time_;
 };
-
 
 #endif // DIFFDRIVE_ARDUINO_REAL_ROBOT_H
