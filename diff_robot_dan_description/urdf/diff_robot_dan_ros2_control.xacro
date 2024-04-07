@@ -59,6 +59,7 @@
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>$(find diff_robot_dan_description)/config/robot_controllers.yaml</parameters>
+            <parameters>$(find diff_robot_dan_description)/config/gazebo_ros2_control.yaml</parameters>
         </plugin>
     </gazebo> 
 
