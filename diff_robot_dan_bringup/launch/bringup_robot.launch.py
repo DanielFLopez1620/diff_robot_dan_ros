@@ -26,7 +26,7 @@ def generate_launch_description():
     gui = LaunchConfiguration("gui")
 
     description_package = 'diff_robot_dan_description'
-    description_package = 'diff_robot_dan_gazebo'
+    # description_package = 'diff_robot_dan_gazebo'
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -41,9 +41,11 @@ def generate_launch_description():
    
     controller_manager = Node(
         package="controller_manager",
-        executable="spawner",
-        parameters=[{'robot_description': robot_description}, 
-                    controller_params_file]
+        executable="ros2_control_node",
+        parameters=[controller_params_file],
+	remappings=[
+	    ('~/robot_description','robot_description')
+	]
     )
     
     delayed_controller_manager_spawner = TimerAction(
@@ -54,7 +56,7 @@ def generate_launch_description():
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_state_broadcaster",]
+        arguments=["diff_dan_robot_controller",]
     )
     
     delayed_diff_drive_spawner = RegisterEventHandler(
