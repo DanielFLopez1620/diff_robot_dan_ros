@@ -10,18 +10,18 @@ controller_manager:
 
 diff_controller:
   ros__parameters:
-    publish_rate: 50.0
-    left_wheel_names: ['left_wheel_joint']
-    right_wheel_names: ['right_wheel_joint']
+    publish_rate: 30.0
+    left_wheel_names: ['shaft_left_to_motor']
+    right_wheel_names: ['shaft_right_to_motor']
     wheels_per_side: 1
-    wheel_separation: 0.3
-    wheel_radius: 0.05
+    wheel_separation: 0.2055
+    wheel_radius: 0.033475
     base_frame_id: base_link
     use_stamped_vel: false
 
-    linear.x.has_velocity_limits: false
-    linear.x.has_acceleration_limits: false
-    linear.x.has_jerk_limits: false
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.has_jerk_limits: true
     linear.x.max_velocity: 0.0
     linear.x.min_velocity: 0.0
     linear.x.max_acceleration: 0.0
@@ -29,9 +29,9 @@ diff_controller:
     linear.x.max_jerk: 0.0
     linear.x.min_jerk: 0.0
 
-    angular.z.has_velocity_limits: false
-    angular.z.has_acceleration_limits: false
-    angular.z.has_jerk_limits: false
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.has_jerk_limits: true
     angular.z.max_velocity: 0.0
     angular.z.min_velocity: 0.0
     angular.z.max_acceleration: 0.0
