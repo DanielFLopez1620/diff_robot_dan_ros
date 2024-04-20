@@ -26,7 +26,7 @@ def generate_launch_description():
     gui = LaunchConfiguration("gui")
 
     description_package = 'diff_robot_dan_description'
-    # description_package = 'diff_robot_dan_gazebo'
+    bringup_package = "diff_robot_dan_bringup"
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -80,11 +80,18 @@ def generate_launch_description():
             on_start=[joint_broad_spawner]
         )
     )
+
+    ld06_lidar = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(bringup_package), 'launch', "ld06_lidar.launch.py"
+        )])
+    )
     
     # Launch them all!
     return LaunchDescription([
         diff_robot_description,
         delayed_controller_manager_spawner,
         delayed_diff_drive_spawner,
-        delayed_joint_broad_spawner
+        delayed_joint_broad_spawner,
+        ld06_lidar
     ])
