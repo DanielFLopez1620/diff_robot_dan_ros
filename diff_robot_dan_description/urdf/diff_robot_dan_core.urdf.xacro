@@ -388,7 +388,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="1.5708 3.1416 1.5708" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_right.STL" />
@@ -398,7 +398,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="1.5708 3.1416 1.5708" />
+        rpy="1.5708 0 1.5708" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_support_right.STL" />
@@ -410,7 +410,7 @@
     type="fixed">
     <origin
       xyz="0.05605 -0.05525 0"
-      rpy="0 1.5708 3.1416" />
+      rpy="0 1.5708 0" />
     <parent
       link="base_platform" />
     <child
@@ -437,7 +437,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="3.1416 0 0" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_right.STL" />
@@ -447,7 +447,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="3.1416 0 0" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/motor_right.STL" />
@@ -458,8 +458,8 @@
     name="motor_right_to_support"
     type="fixed">
     <origin
-      xyz="0.02025 0 0.01155"
-      rpy="0 0 0" />
+      xyz="0.02025 0 -0.01155"
+      rpy="0 0 -3.1416" />
     <parent
       link="motor_support_right" />
     <child
@@ -486,7 +486,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="3.1416 0 0" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/shaft_right.STL" />
@@ -496,7 +496,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="3.1416 0 0" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/shaft_right.STL" />
@@ -507,14 +507,14 @@
     name="shaft_right_to_motor"
     type="continuous">
     <origin
-      xyz="0 0 -0.026545"
+      xyz="0 0 0.026545"
       rpy="0 0 -1.8068" />
     <parent
       link="motor_right" />
     <child
       link="shaft_right" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       effort="1.0297"
       velocity="10.472" />
@@ -538,7 +538,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="4.7124 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/coupling_right.STL" />
@@ -548,7 +548,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="4.7124 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/coupling_right.STL" />
@@ -559,7 +559,7 @@
     name="copling_right_to_shaft"
     type="fixed">
     <origin
-      xyz="0 0 -0.0046"
+      xyz="0 0 0.0046"
       rpy="0 0 -1.7908" />
     <parent
       link="shaft_right" />
@@ -587,7 +587,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="1.5708 0 0" />
+        rpy="-1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/ring_right.STL" />
@@ -597,7 +597,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="1.5708 0 0" />
+        rpy="-1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/ring_right.STL" />
@@ -608,7 +608,7 @@
     name="ring_right_to_coupling"
     type="fixed">
     <origin
-      xyz="0 0 -0.021355"
+      xyz="0 0 0.021355"
       rpy="0 0 0" />
     <parent
       link="coupling_right" />
@@ -636,7 +636,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="-1.5708 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://diff_robot_dan_description/meshes/neumatic_right.STL" />
@@ -646,7 +646,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="-1.5708 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <sphere radius="0.033475"/>
         <!--mesh
@@ -658,7 +658,7 @@
     name="neumatic_right_to_ring"
     type="fixed">
     <origin
-      xyz="0 -0.00055 0"
+      xyz="0 0.00055 0"
       rpy="0 0 0" />
     <parent
       link="ring_right" />
