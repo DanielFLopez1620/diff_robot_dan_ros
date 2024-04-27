@@ -7,7 +7,9 @@
     <joint name="laser_joint" type="fixed">
         <parent link="lidar_base"/>
         <child link="laser_frame"/>
-        <origin xyz="0 0 0.0445" rpy="0 0 1.57"/>
+        <origin 
+            xyz="0 0 0.0445" 
+            rpy="0 0 -1.57"/>
     </joint>
 
     <gazebo reference="laser_frame">
