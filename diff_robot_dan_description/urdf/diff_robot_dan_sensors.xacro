@@ -9,7 +9,7 @@
         <child link="laser_frame"/>
         <origin 
             xyz="0 0 0.0445" 
-            rpy="0 0 -1.57"/>
+            rpy="0 0 1.57"/>
     </joint>
 
     <gazebo reference="laser_frame">
