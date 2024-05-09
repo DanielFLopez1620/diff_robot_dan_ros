@@ -3,9 +3,11 @@
 <package format="3">
   <name>diff_robot_dan_gazebo</name>
   <version>2.0.0</version>
-  <description>Launches and worls for the diff robot dan simulation with Gazebo</description>
+  <description>
+    Launches and worls for the diff robot dan simulation with Gazebo
+  </description>
   <maintainer email="dfelipe.lopez@gmail.com">DanielFLopez1620</maintainer>
-  <license>BSD 3-Clause License</license>
+  <license>BSD 3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
