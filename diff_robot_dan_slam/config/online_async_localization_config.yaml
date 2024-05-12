@@ -12,11 +12,11 @@ slam_toolbox:
     map_frame: map
     base_frame: base_link
     scan_topic: /scan
-    mode: localization
+    mode: mapping
 
     scan_queue_size: 1
 
-    map_file_name: ~/dan_ws/src/diff_robot_dan/diff_robot_dan_slam/maps/living_room
+    map_file_name: ~/dan_ws/
     map_start_at_dock: true
 
     debug_logging: false
