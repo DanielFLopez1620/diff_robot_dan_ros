@@ -278,6 +278,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        voltage_regulator:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        voltage_regulator_support:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Mass Properties:
         Inertia: false
         Mass: false
@@ -379,6 +389,10 @@ Visualization Manager:
           Value: true
         sup_platform:
           Value: true
+        voltage_regulator:
+          Value: true
+        voltage_regulator_support:
+          Value: true
       Marker Scale: 0.05000000074505806
       Name: TF
       Show Arrows: true
@@ -452,6 +466,9 @@ Visualization Manager:
                   {}
               raspberry:
                 {}
+            voltage_regulator_support:
+              voltage_regulator:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -500,7 +517,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.42935287952423096
+      Distance: 0.5962852835655212
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -515,10 +532,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.33039727807044983
+      Pitch: 0.35039737820625305
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.4853944778442383
+      Yaw: 0.6553985476493835
     Saved: ~
 Window Geometry:
   Displays:
@@ -534,5 +551,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1908
-  X: 0
-  Y: 0
+  X: -32
+  Y: -32

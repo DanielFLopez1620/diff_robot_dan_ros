@@ -105,6 +105,12 @@
     <gazebo reference="camera">
         <material>Gazebo/DarkGrey</material>
     </gazebo>
+    <gazebo reference="voltage_regulator_support">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="voltage_regulator">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <gazebo reference="central_wheel">
         <mu1 value="0.005"/>

@@ -514,7 +514,7 @@
     <child
       link="shaft_right" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       effort="1.0297"
       velocity="10.472" />
@@ -1902,12 +1902,12 @@
       <mass
         value="0" />
       <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+        ixx="1.48922995829569E-06"
+        ixy="5.25911835519131E-15"
+        ixz="3.33245387880175E-12"
+        iyy="1.48922882572878E-06"
+        iyz="3.85848640885222E-13"
+        izz="5.17103684689375E-08" />
     </inertial>
     <visual>
       <origin
@@ -1942,4 +1942,107 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+  <link
+    name="voltage_regulator_support">
+    <inertial>
+      <origin
+        xyz="0 -0.01248 0.0062"
+        rpy="0 0 0" />
+      <mass
+        value="0.0063217" />
+      <inertia
+        ixx="1176.59E-9"
+        ixy="0.00000"
+        ixz="0.00000"
+        iyy="4434.68E-9"
+        iyz="5.48E-9"
+        izz="5594.9E-9" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan_description/meshes/voltage_regulator_support_2.STL" 
+          scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan_description/meshes/voltage_regulator_support_2.STL"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="voltage_reg_support_to_base"
+    type="fixed">
+    <origin
+      xyz="-0.0485 -0.0815 0.0025"
+      rpy="0 0 0" />
+    <parent
+      link="base_platform" />
+    <child
+      link="voltage_regulator_support" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="voltage_regulator">
+    <inertial>
+      <origin
+        xyz="0.0012574 0.00088917 0.0063217"
+        rpy="0 0 0" />
+      <mass
+        value="0.0063217" />
+      <inertia
+        ixx="3.0667E-06"
+        ixy="-1.079E-07"
+        ixz="-7.1385E-08"
+        iyy="7.3036E-06"
+        iyz="-5.4148E-08"
+        izz="9.8754E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan_description/meshes/voltage_regulator.STL" />
+      </geometry>
+      <material name="blue_electronic"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 0" />
+      <geometry>
+        <mesh
+          filename="package://diff_robot_dan_description/meshes/voltage_regulator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="voltage_regulator_to_support"
+    type="fixed">
+    <origin
+      xyz="0.0485 -0.0075 0.0215"
+      rpy="0 0 0" />
+    <parent
+      link="voltage_regulator_support" />
+    <child
+      link="voltage_regulator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
 </robot>
