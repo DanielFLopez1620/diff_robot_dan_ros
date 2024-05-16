@@ -12,11 +12,11 @@ slam_toolbox:
     map_frame: map
     base_frame: base_link
     scan_topic: /scan
-    mode: mapping
+    mode: localization
 
     scan_queue_size: 1
 
-    map_file_name: ~/dan_ws/
+    map_file_name: ~/dan_ws/src/diff_robot_dan_ros/diff_robot_dan_slam/maps/gazebo_laberynth_serial
     map_start_at_dock: true
 
     debug_logging: false
