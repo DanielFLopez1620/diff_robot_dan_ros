@@ -1,6 +1,4 @@
-# Based on the ROS2_Control launch from example 9 of Humble tutorials
 import os
-
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
@@ -24,9 +22,17 @@ def generate_launch_description():
     )
 
     gui = LaunchConfiguration("gui")
+    cmd_vel_config = LaunchConfiguration("cmd_vel_config")
+    
+    cmd_vel_config_launch_arg = DeclareLaunchArgument(
+        "cmd_vel_config",
+        default_value='/cmd_vel_joy'
+        description="Current topic of the robot to move / cmd_vel"
+    )
 
     description_package = 'diff_robot_dan_description'
-    bringup_package = "diff_robot_dan_bringup"
+    bringup_package = 'diff_robot_dan_bringup'
+    teleop_package = 'diff_robot_dan_teleop'
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -43,9 +49,7 @@ def generate_launch_description():
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[controller_params_file],
-	remappings=[
-	    ('~/robot_description','robot_description')
-	]
+	    remappings=[ ('~/robot_description','robot_description')]
     )
     
     delayed_controller_manager_spawner = TimerAction(
@@ -87,11 +91,24 @@ def generate_launch_description():
         )])
     )
     
-    # Launch them all!
+    joystick_teleop = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(teleop_package),'launch','joystick_teleop.launch.py'
+                )]), launch_arguments={'use_sim_time': 'false', 'cmd_vel_config': cmd_vel_config}.items()
+    )
+    
+    twist_mux = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(teleop_package), 'launch', "twist_mux.launch.py"
+        )])
+    )
+    
     return LaunchDescription([
+        cmd_vel_config_launch_arg,
         diff_robot_description,
         delayed_controller_manager_spawner,
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
-        ld06_lidar
+        ld06_lidar,
+        joystick_teleop
     ])
