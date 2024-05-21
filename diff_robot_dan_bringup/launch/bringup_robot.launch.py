@@ -26,7 +26,7 @@ def generate_launch_description():
     
     cmd_vel_config_launch_arg = DeclareLaunchArgument(
         "cmd_vel_config",
-        default_value='/cmd_vel_joy'
+        default_value='/cmd_vel_joy',
         description="Current topic of the robot to move / cmd_vel"
     )
 
@@ -110,5 +110,6 @@ def generate_launch_description():
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
         ld06_lidar,
-        joystick_teleop
+        joystick_teleop,
+        twist_mux
     ])

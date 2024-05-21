@@ -24,10 +24,17 @@ def generate_launch_description():
         )
     )
 
-    gui = LaunchConfiguration("gui")
-
     description_package = 'diff_robot_dan_description'
     gazebo_package = 'diff_robot_dan_gazebo'
+    teleop_package = 'diff_robot_dan_teleop'
+
+    cmd_vel_config = LaunchConfiguration("cmd_vel_config")
+    
+    cmd_vel_config_launch_arg = DeclareLaunchArgument(
+        "cmd_vel_config",
+        default_value='/cmd_vel_joy',
+        description="Current topic of the robot to move / cmd_vel with joystick"
+    )
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -97,9 +104,22 @@ def generate_launch_description():
             )
         ],
     )
+
+    joystick_teleop = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(teleop_package),'launch','joystick_teleop.launch.py'
+                )]), launch_arguments={'use_sim_time': 'false', 'cmd_vel_config': cmd_vel_config}.items()
+    )
+    
+    twist_mux = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(teleop_package), 'launch', "twist_mux.launch.py"
+        )])
+    )
     
     # Launch them all!
     return LaunchDescription([
+        cmd_vel_config_launch_arg,
         diff_robot_description,
         gazebo,
         spawn_entity,
@@ -107,4 +127,6 @@ def generate_launch_description():
         # delayed_diff_drive_spawner,
         # joint_broad_spawner,
         delayed_controller_manager_spawner,
+        joystick_teleop,
+        twist_mux
     ])

@@ -7,6 +7,12 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 
+install(
+  DIRECTORY launch config
+  DESTINATION share/${PROJECT\_NAME}
+)
+
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
 
