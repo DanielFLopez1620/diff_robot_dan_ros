@@ -108,13 +108,13 @@ def generate_launch_description():
     joystick_teleop = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory(teleop_package),'launch','joystick_teleop.launch.py'
-                )]), launch_arguments={'use_sim_time': 'false', 'cmd_vel_config': cmd_vel_config}.items()
+                )]), launch_arguments={'use_sim_time': 'true', 'cmd_vel_config': cmd_vel_config}.items()
     )
     
     twist_mux = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory(teleop_package), 'launch', "twist_mux.launch.py"
-        )])
+        )]), launch_arguments={'use_sim_time':'true'}.items()
     )
     
     # Launch them all!
