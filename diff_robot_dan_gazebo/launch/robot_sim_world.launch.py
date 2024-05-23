@@ -27,12 +27,27 @@ def generate_launch_description():
     )
 
     world = LaunchConfiguration('world')
-
+    cmd_vel_config = LaunchConfiguration('cmd_vel_config')
+    
     description_package = 'diff_robot_dan_description'
     gazebo_package = 'diff_robot_dan_gazebo'
-
+    teleop_package = 'diff_robot_dan_teleop'
+    
     world_name = 'gazebo_laberynth.world'
     world_path = os.path.join(get_package_share_directory(gazebo_package),'worlds', world_name)
+    
+    world_launch_arg = DeclareLaunchArgument(
+        name='world',
+        default_value=world_path,
+        description='Full path to world where the robot will be spawned')
+    
+    cmd_vel_config_launch_arg = DeclareLaunchArgument(
+        name='cmd_vel_config',
+        default_value='/cmd_vel_joy',
+        description="Current topic of the robot to move /cmd_vel with"
+    )
+
+
 
     diff_robot_description = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -45,13 +60,7 @@ def generate_launch_description():
 
     gazebo_params_file = os.path.join(
                 get_package_share_directory(gazebo_package),'config','gazebo_params.yaml')
-    
-    print(world_path)
 
-    declare_world_cmd = DeclareLaunchArgument(
-        name='world',
-        default_value=world_path,
-        description='Full path to world where the robot will be spawned')
 
     # Include the Gazebo launch file, provided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
@@ -89,11 +98,26 @@ def generate_launch_description():
         ],
     )
     
+    joystick_teleop = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(teleop_package),'launch','joystick_teleop.launch.py'
+                )]), launch_arguments={'use_sim_time': 'true', 'cmd_vel_config': cmd_vel_config}.items()
+    )
+    
+    twist_mux = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(teleop_package), 'launch', "twist_mux.launch.py"
+        )]), launch_arguments={'use_sim_time':'true'}.items()
+    )
+    
     # Launch them all!
     return LaunchDescription([
+        world_launch_arg,
+        cmd_vel_config_launch_arg,
         diff_robot_description,
-        declare_world_cmd,
         gazebo,
         spawn_entity,
         delayed_controller_manager_spawner,
+        joystick_teleop,
+        twist_mux
     ])
