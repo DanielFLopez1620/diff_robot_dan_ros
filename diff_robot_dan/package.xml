@@ -2,14 +2,27 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>diff_robot_dan</name>
-  <version>0.0.0</version>
+  <version>1.0.0</version>
   <description>
-    Metapackage of the diff_robot_dan.
+    Metapackage of the diff_robot_dan package collection.
   </description>
-  <maintainer email="dfelipe.lopez@gmail.com">dan1620</maintainer>
+
+  <maintainer email="dfelipe.lopez@gmail.com">DanielFLopez1620</maintainer>
+  
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>diff_robot_dan_base</exec_depend>
+  <exec_depend>diff_robot_dan_bringup</exec_depend>
+  <exec_depend>diff_robot_dan_controller</exec_depend>
+  <exec_depend>diff_robot_dan_description</exec_depend>
+  <exec_depend>diff_robot_dan_gazebo</exec_depend>
+  <exec_depend>diff_robot_dan_navigation</exec_depend>
+  <exec_depend>diff_robot_dan_slam</exec_depend>
+  <exec_depend>diff_robot_dan_teleop</exec_depend>
+  <exec_depend>diffdrive_arduino</exec_depend>
+  <exec_depend>serial</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -4,14 +4,17 @@
   <name>diff_robot_dan_teleop</name>
   <version>0.0.0</version>
   <description>
-    Collection of launches for teleoperating the diff_robot_dan.
+    Collection of launches for teleoperating the diff_robot_dan with joystick
+    while implementing a mux for considering multiple /cmd_vel sources.
   </description>
-  <maintainer email="dfelipe.lopez@gmail.com">dan1620</maintainer>
+  <maintainer email="dfelipe.lopez@gmail.com">DanielFLopez1620</maintainer>
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>teleop_twist_keyboard</exec_depend>
+  <exec_depend>teleop_twist_joy</exec_depend>
+  <exec_depend>twist_mux</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

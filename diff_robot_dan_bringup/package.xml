@@ -2,12 +2,20 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>diff_robot_dan_bringup</name>
-  <version>0.0.0</version>
-  <description>Diff robot dan bringup real robot</description>
-  <maintainer email="dfelipe.lopez@gmail.com">dan1620</maintainer>
+  <version>1.0.0</version>
+  <description> 
+    diff_robot_dan bringup for real/physic robot
+  </description>
+  
+  <maintainer email="dfelipe.lopez@gmail.com">DanielFLopez1620</maintainer>
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>ldlidar_stl_ros2</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
