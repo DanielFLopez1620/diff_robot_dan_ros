@@ -1,3 +1,6 @@
+# Data obtained after running camera_calibration package in Raspberry Pi
+# with Ubuntu 22.04 with ROS2 Humble installed.
+
 image_width: 640
 image_height: 480
 camera_name: "Microsoft Corp. LifeCam HD-3000"
