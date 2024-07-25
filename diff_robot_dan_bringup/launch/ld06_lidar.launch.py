@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# Original Author: ldrobotSensorTeam
+# Source: https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2/blob/master/launch/ld06.launch.py
+# Modified, adapted and commented by: DanielFLopez1620
+# Description: Launch set up of the robot to run it in real life.
+
 # -------------------------- LAUNCH DEPENDENCIES ------------------------------
 from launch import LaunchDescription
 from launch_ros.actions import Node

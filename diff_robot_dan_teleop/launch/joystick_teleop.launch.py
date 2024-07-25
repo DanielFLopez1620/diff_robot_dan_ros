@@ -18,7 +18,7 @@ def generate_launch_description():
     
     cmd_vel_config_launch_arg = DeclareLaunchArgument(
         'cmd_vel_config',
-        default_value='/diff_dan_robot_controller/cmd_vel_unstamped',
+        default_value='/diff_robot_dan_controller/cmd_vel_unstamped',
         description='Topic for cmd_vel according control, nav2 or sim'
     )
     

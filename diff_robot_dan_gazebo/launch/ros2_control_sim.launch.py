@@ -69,7 +69,7 @@ def generate_launch_description():
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["diff_dan_robot_controller", "--controller-manager", "/controller_manager"],
+        arguments=["diff_robot_dan_controller", "--controller-manager", "/controller_manager"],
     )
 
     
@@ -95,7 +95,7 @@ def generate_launch_description():
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["diff_dan_robot_controller"],
+                arguments=["diff_robot_dan_controller"],
             ),
             Node(
                 package="controller_manager",

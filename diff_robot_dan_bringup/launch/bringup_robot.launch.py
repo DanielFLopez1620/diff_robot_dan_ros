@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# Original Author: Josh Newans | Articulated Robotics
+# Source: https://github.com/joshnewans/articubot_one/blob/main/launch/launch_robot.launch.py
+# Modified, adapted and commented by: DanielFLopez1620
+# Description: Launch set up of the robot to run it in real life.
+
+
 # --------------------- PYTHON RELATED DEPENDENCIES ---------------------------
 import os
 from ament_index_python.packages import get_package_share_directory
@@ -102,7 +108,7 @@ def generate_launch_description():
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["diff_dan_robot_controller",]
+        arguments=["diff_robot_dan_controller",]
     )
     
     # On start of the process of the controller manager, spawn the 
@@ -161,6 +167,8 @@ def generate_launch_description():
         condition=IfCondition(gui_config)
     )
     
+    # TODO: Add action when car is ready?
+
     # List and launch the considered processes, configs and params.
     return LaunchDescription(
         declared_arguments + [

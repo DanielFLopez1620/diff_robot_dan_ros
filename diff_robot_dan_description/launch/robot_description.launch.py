@@ -1,29 +1,36 @@
 # Original Author: Josh Newans | Articulated Robotics
+# Source: https://github.com/joshnewans/articubot_one/blob/main/launch/rsp.launch.py
 # Modified by: DanielFLopez1620
 # Description: Launch the robot description of a robot, to make it available.
 
+# ---------------------- PYTHON DEPENDENCIES ----------------------------------
 import os
-
+import xacro
 from ament_index_python.packages import get_package_share_directory
 
+# --------------------- LAUNCH DEPENDENCIES -----------------------------------
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration, Command
 from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import Node
 
-import xacro
-
 
 def generate_launch_description():
+    """
+    Script oriented to launch the robot description of the diff_robot_dan without
+    visualization, by just considering the pass of the Xacro file model.
+    """
 
-    # Check for 'use_sim_time' param
+    # Configurations declared 
     use_sim_time = LaunchConfiguration('use_sim_time')
     use_ros2_control = LaunchConfiguration('use_ros2_control')
 
-    # Process the URDF file from your description package (this includes the traslation of xacro->urdf)
+    # Provide the package path
     pkg_path = os.path.join(get_package_share_directory('diff_robot_dan_description'))
     xacro_file = os.path.join(pkg_path,'urdf','diff_robot_dan.xacro')
-    # robot_description_config = xacro.process_file(xacro_file)
+
+    # Process the URDF file from your description package
+    # It also considers the conversion from Xacro to URDF
     robot_description_config = Command(['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control, ' sim_mode:=', use_sim_time])
 
     # Create a robot_state_publisher node, related with the state of the joints depending on their type.

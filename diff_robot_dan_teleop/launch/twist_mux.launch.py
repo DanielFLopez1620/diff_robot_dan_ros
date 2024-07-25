@@ -24,7 +24,7 @@ def generate_launch_description():
             package="twist_mux",
             executable="twist_mux",
             parameters=[twist_mux_path, {'use_sim_time': use_sim_time}],
-            remappings=[('/cmd_vel_out','/diff_dan_robot_controller/cmd_vel_unstamped')]
+            remappings=[('/cmd_vel_out','/diff_robot_dan_controller/cmd_vel_unstamped')]
         )
     
     return LaunchDescription([

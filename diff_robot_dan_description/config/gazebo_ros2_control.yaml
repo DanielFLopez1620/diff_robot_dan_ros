@@ -1,3 +1,4 @@
+# Params related with the gazebo controller
 controller_manager:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true # Sim time is required for simulations
