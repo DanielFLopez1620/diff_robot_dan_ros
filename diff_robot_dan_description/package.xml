@@ -4,7 +4,7 @@
   <name>diff_robot_dan_description</name>
   <version>2.0.0</version>
   <description>
-    Models, URDFs and launches of the diff_robot_dan.
+    Models, URDFs and launches of the Diff Robot Dan for robot description.
   </description>
   <maintainer email="dfelipe.lopez@gmail.com">DanielFLopez1620</maintainer>
   <license>BSD 3-Clause</license>
