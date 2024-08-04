@@ -2,6 +2,8 @@
  * Define single-letter commands that will be sent by the PC over the
  * serial link.
  * 
+ * Original Authors: James Nugen, Patrick Goebel
+ * 
  * Taken from: https://github.com/joshnewans/ros_arduino_bridge/tree/main
  * Additional comments by: DanielFLopez1620
 */
@@ -26,6 +28,6 @@
 #define LEFT            0   // Left motor, actuator, encoders...
 #define RIGHT           1   // Right motor, actuator, encoders...
 
-#endif
+#endif // COMMANDS_H
 
 

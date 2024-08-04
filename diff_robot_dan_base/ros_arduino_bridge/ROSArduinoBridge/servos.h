@@ -1,7 +1,16 @@
+/**
+ * 
+ * Original Author: Nathaniel Gallinger
+ * 
+ * Taken from: https://github.com/joshnewans/ros_arduino_bridge/tree/main
+ * 
+ * Additional comments and modifications by: DanielFLopez1620
+ */
+
 #ifndef SERVOS_H
 #define SERVOS_H
 
-
+// Number of servos connected to the robot
 #define N_SERVOS 2
 
 // This delay in milliseconds determines the pause 
@@ -12,13 +21,16 @@
 // full speed.  150 ms makes them spin very slowly.
 int stepDelay [N_SERVOS] = { 0, 0 }; // ms
 
-// Pins
+// Pins considered for the servos
 byte servoPins [N_SERVOS] = { 3, 4 };
 
-// Initial Position
-byte servoInitPosition [N_SERVOS] = { 90, 90 }; // [0, 180] degrees
+// Initial Position in degrees (vary according your servo installation)
+byte servoInitPosition [N_SERVOS] = { 90, 90 };
 
-
+/**
+ * Class oriented to use a servomotor with given positions to set, or to read
+ * and obtain info of them.
+ */
 class SweepServo
 {
   public:
@@ -41,4 +53,4 @@ class SweepServo
 
 SweepServo servos [N_SERVOS];
 
-#endif
+#endif // SERVOS_H

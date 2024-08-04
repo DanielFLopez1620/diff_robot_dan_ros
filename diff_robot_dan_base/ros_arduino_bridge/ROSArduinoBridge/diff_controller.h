@@ -1,5 +1,7 @@
 /* Functions and type-defs for PID control.
  *
+ * 	Original Author: James Nugen, Patrick Goebel
+ * 
  *  Taken mostly from Mike Ferguson's ArbotiX code which lives at:
  *  https://github.com/vanadiumlabs/arbotix_ros/blob/noetic-devel/arbotix_firmware/src/diff_controller.h
  *	
@@ -74,7 +76,8 @@ void resetPID()
 	rightPID.output = 0;
 	rightPID.PrevInput = 0;
 	rightPID.ITerm = 0;
-}
+
+} // resetPID()
 
 /**
  * PID do routine that considers derivate kick and turning changes:
@@ -114,7 +117,7 @@ void doPID(SetPointInfo * p)
 	p->ITerm += Ki * Perror;
 	p->output = output;
 	p->PrevInput = input;
-}
+} // doPID()
 
 /**
  * Read encoders values and call the PID routine.
@@ -143,5 +146,6 @@ void updatePID()
 
 	// Set a propoer motor speed
 	setMotorSpeeds(leftPID.output, rightPID.output);
-}
+
+} // updatePID()
 
