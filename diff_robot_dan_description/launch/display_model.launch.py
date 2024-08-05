@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Original Author: Addison Sears-Collins | Automatic Addison
 # Source: https://automaticaddison.com/how-to-load-a-urdf-file-into-rviz-ros-2/
 # Modified by: DanielFLopez1620
