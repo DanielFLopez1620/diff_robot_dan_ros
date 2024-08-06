@@ -19,10 +19,11 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch.conditions import IfCondition
 
+# ----------------------------- LAUNCH DESCRIPTION ----------------------------
 
 def generate_launch_description():
     """
-    Script oriented to spawn the Diff Robot Dan in a Gazebo generated maze,
+    Script oriented to spawn the Diff Robot Dan        world_arg, in a Gazebo generated maze,
     ready to run to explore the usage of the robot like SLAM and Navigation.
     """
 
@@ -84,7 +85,7 @@ def generate_launch_description():
                     launch_arguments = {
                         'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file,
                         'world': world_config,
-                        'verbose' : 'true'
+                        'verbose' : 'false'
                     }.items()
              )
 
@@ -139,7 +140,7 @@ def generate_launch_description():
     # Consider a path for the Rviz2 visualization config
     rviz_config_path = os.path.join(
         get_package_share_directory(description_package), 'rviz', 
-            'rviz_robot_model.rviz')
+            'rviz_up.rviz')
     
     # Conditionally add RViz2 if respective argument is set to True
     rviz_node = Node(

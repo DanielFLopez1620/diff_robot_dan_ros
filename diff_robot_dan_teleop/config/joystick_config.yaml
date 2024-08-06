@@ -1,11 +1,15 @@
+---
+# Default joystick config for an XBOX Series X/S Controller
+
 joy_node:
   ros__parameters:
-    device_id: 0
-    deadzone: 0.05
-    autorepeat_rate: 20.0
+    device_id: 0  # ID connection /dev
+    deadzone: 0.05  # Joystick deadzone
+    autorepeat_rate: 20.0  # Repeat action rate
 
 teleop_twist_joy_node:
   ros__parameters:
+    # Linear movement (direction of X axis)
     axis_linear:
       x: 1
     scale_linear:
@@ -13,6 +17,7 @@ teleop_twist_joy_node:
     scale_linear_turbo:
       x: 1.0
 
+    # Angular movement (around Z axis)
     axis_angular:
       yaw: 0
     scale_angular:
@@ -20,8 +25,6 @@ teleop_twist_joy_node:
     scale_angular_turbo:
       yaw: 1.0
 
-
     # enable_button: 2
     # enable_turbo_button: 5
-
     # require_enable_button: true
