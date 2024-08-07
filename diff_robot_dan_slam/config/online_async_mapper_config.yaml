@@ -1,8 +1,12 @@
+---
+
+# Slam params for generation of the map in an online, asynchronous way.
+
 slam_toolbox:
   ros__parameters:
     # --------------------- MODE INFO OF SLAM --------------------------------
     mode: mapping         # Mode for creating a new map
-    debug_logging: false  # Wheter configure debug or not
+    debug_logging: false  # Wheter to configure debug or not
 
     # ----------------------------- SOLVER CONFIGURATIONS ---------------------
     solver_plugin: solver_plugins::CeresSolver   # Non-linear solver for karto'
@@ -17,32 +21,32 @@ slam_toolbox:
     map_frame: map         # Base frame for the map
     base_frame: base_link  # Base frame of the robot
 
-    scan_queue_size: 1     # Should always be one during async mode
 
     # ------------------------ SCAN PARAMETERS --------------------------------
     min_laser_range: 0.05   # Minimum range of the LIDAR
     max_laser_range: 5.0    # Maximun range of the LIDAR
     scan_topic: /scan       # Topic with the LIDAR/Laser scan information
     scan_buffer_size: 10    # Number of scans to buffer into a chain
-    
+    scan_queue_size: 1      # Should always be one during async mode
+
     scan_buffer_maximum_scan_distance: 10.0  # Max dist. to remove linked scan
     link_match_minimum_response_fine: 0.1    # Threshold response for fine pass
     link_scan_maximum_distance: 1.5          # Max dist. for valid linked scans
 
     # ---------------------- LOOP CLOUSURE CONFIGURATION ----------------------
 
-    # A loop clousre aims to reduce accumulated error when considering an 
-    # already mapped section by aligning the current scan and comparing. Here 
+    # A loop clousre aims to reduce accumulated error when considering an
+    # already mapped section by aligning the current scan and comparing. Here
     # consists of:
     # - Coarse: Broader, less sprecise earch to identify potential candidates.
     # - Fine: For refinying candidate identification in a more detailed way.
 
-    do_loop_closing: true                    # For doing loop clousure
-    loop_search_maximum_distance: 3.0        # Minimum chain for closed loop
-    loop_match_minimum_chain_size: 10        # Maximum chain for closed loop
-    loop_match_maximum_variance_coarse: 3.0  # Max. var. during coarse search
-    loop_match_minimum_response_coarse: 0.35 # Min. for coarse's search's refine
-    loop_match_minimum_response_fine: 0.45   # Min. for fine's search's refine
+    do_loop_closing: true                     # For doing loop clousure
+    loop_search_maximum_distance: 3.0         # Minimum chain for closed loop
+    loop_match_minimum_chain_size: 10         # Maximum chain for closed loop
+    loop_match_maximum_variance_coarse: 3.0   # Max. var. during coarse search
+    loop_match_minimum_response_coarse: 0.35  # Min. for coarse's search's ref.
+    loop_match_minimum_response_fine: 0.45    # Min. for fine's search's refine
 
     # -------------------------- POSE PARAMETERS ------------------------------
     transform_publish_period: 0.02  # Rate at which the robot pose is published
@@ -53,20 +57,20 @@ slam_toolbox:
     stack_size_to_use: 40000000     # Bytes to reset stack size
     use_scan_matching: true         # Whether to use scan to refine odometry
     use_scan_barycenter: true       # Wheter to use the barycenter or scan pose
-    distance_variance_penalty: 0.5  # Dist. penalty when scan differs from odom    
+    distance_variance_penalty: 0.5  # Dist. penalty when scan differs from odom
     angle_variance_penalty: 1.0     # Angle penalty when scan differs from odom
-    minimum_angle_penalty: 0.9      # Penalty to prevent size isn't a problem 
+    minimum_angle_penalty: 0.9      # Penalty to prevent size isn't a problem
     minimum_distance_penalty: 0.5   # Penalty to prevent size isn't a problem
-    
+
     # ------------------------- MAP PARAMS ------------------------------------
     enable_interactive_mode: true  # Will retain laser cache, valid for mapping
     resolution: 0.05               # Map resolution in meters per pixel
-    map_update_interval: 5.0       # Time to update map for other visualization 
+    map_update_interval: 5.0       # Time to update map for other visualization
     use_response_expansion: true   # Whether to update grid size if no match
 
-    fine_search_angle_offset: 0.00349        # For testing fine scan matching  
+    fine_search_angle_offset: 0.00349        # For testing fine scan matching
     coarse_search_angle_offset: 0.349        # For testing coarse scan matching
-    coarse_angle_resolution: 0.0349          # Resolution for scan matching      
+    coarse_angle_resolution: 0.0349          # Resolution for scan matching
 
     # -------------------------- SPACE PARAMS ---------------------------------
     correlation_search_space_dimension: 0.5        # Grid size for correlation
@@ -76,6 +80,6 @@ slam_toolbox:
     loop_search_space_resolution: 0.05             # Res. search for loop clou.
     loop_search_space_smear_deviation: 0.03        # For smooth out responses
 
-    # Maybe delete.... (Synchronous)
+    # TODO: Maybe delete.... (Synchronous)
     throttle_scans: 1
     minimum_time_interval: 0.05     # Minimum time interval between laser scans

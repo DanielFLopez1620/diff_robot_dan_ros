@@ -17,6 +17,8 @@ from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
 
+# ------------------------------ LAUNCH DESCRIPTION ---------------------------
+
 def generate_launch_description():
     """
     Script oriented to launch the joy_node and teleop_twist_joy node, to play
