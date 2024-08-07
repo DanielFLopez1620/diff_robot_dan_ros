@@ -1,11 +1,19 @@
+/**
+ * Taken from: diffdrive_arduino | Articulated Robotics.
+ * Based on: https://github.com/ros-controls/ros2_control_demos/tree/master/example_2
+ * Also considering: https://github.com/buzzology/diffdrive_arduino
+ * Additional comments and modifications: DanielFLopez1620
+ * Description: Header for the commands to connect with the Arduino.
+ */
+
 #ifndef DIFFDRIVE_ARDUINO_ARDUINO_COMMS_H
 #define DIFFDRIVE_ARDUINO_ARDUINO_COMMS_H
 
 // ------------------------- CPP Standard Headers required --------------------
-#include <cstring>
+#include <cstring> // Standard C headers
 
 // ------------------------- Custom headers required --------------------------
-#include <serial/serial.h>
+#include <serial/serial.h> // Requiered for serail connection (C++ based)
 
 // -------------------------- Classs definitions ------------------------------
 class ArduinoComms

@@ -1,8 +1,18 @@
+/**
+ * Taken from: diffdrive_arduino | Articulated Robotics.
+ * Based on: https://github.com/ros-controls/ros2_control_demos/tree/master/example_2
+ * Also considering: https://github.com/buzzology/diffdrive
+ * Additional comments and modifications: DanielFLopez1620
+ * Description: Header for the  description of the configuration params.
+ */
+
 #ifndef DIFFDRIVE_ARDUINO_CONFIG_H
 #define DIFFDRIVE_ARDUINO_CONFIG_H
 
-// --------------------- CPP standard headers required ------------------------
-#include <string>
+// --------------------- CPP STANDARD HEADERS DEFINITIONS --------------------
+#include <string>  // Standard library for strings
+
+// ------------------------ HEADERS DEFINITIONS ------------------------------
 
 /**
  * Structure oriented to configure the serial communication as it will serve to

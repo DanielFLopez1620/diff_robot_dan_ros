@@ -1,23 +1,31 @@
+/**
+ * Taken from: diffdrive_arduino | Articulated Robotics.
+ * Based on: https://github.com/ros-controls/ros2_control_demos/tree/master/example_2
+ * Also considering: https://github.com/buzzology/diffdrive
+ * Additional comments and modifications: DanielFLopez1620
+ * Description: Header for the differential controller.
+ */
+
 #ifndef DIFFDRIVE_ARDUINO_REAL_ROBOT_H
 #define DIFFDRIVE_ARDUINO_REAL_ROBOT_H
 
 // --------------- CPP standard headers required ------------------------------
-#include <cstring>
+#include <cstring>  // C header for strings
 
 // ---------------- ROS2 headers requried -------------------------------------
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp_lifecycle/state.hpp"
+#include "rclcpp/rclcpp.hpp"            // ROS2 CLient Library for C++
+#include "rclcpp_lifecycle/state.hpp"   // Lifecycle management
 
 // ------------ ROS2 Controller for hardware interface required ---------------
-#include "hardware_interface/system_interface.hpp"
+#include "hardware_interface/system_interface.hpp" 
 #include "hardware_interface/handle.hpp"
 #include "hardware_interface/hardware_info.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 
 // ------------ Other's controller dependencies -------------------------------
-#include "config.h"
-#include "wheel.h"
-#include "arduino_comms.h"
+#include "config.h"         // Names params 
+#include "wheel.h"          // Wheels objects
+#include "arduino_comms.h"  // Commands
 
 
 // -------------- Namespaces of the program -----------------------------------

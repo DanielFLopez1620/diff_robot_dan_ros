@@ -1,8 +1,16 @@
+/**
+ * Taken from: diffdrive_arduino | Articulated Robotics.
+ * Based on: https://github.com/ros-controls/ros2_control_demos/tree/master/example_2
+ * Also considering: https://github.com/buzzology/diffdrive
+ * Additional comments and modifications: DanielFLopez1620
+ * Description: Header for the wheel params.
+ */
+
 #ifndef DIFFDRIVE_ARDUINO_WHEEL_H
 #define DIFFDRIVE_ARDUINO_WHEEL_H
 
 // ----------------------- CPP Standards Headers required ---------------------
-#include <string>
+#include <string>  // Standard library for strings
 
 // ---------------------------- Class definitions -----------------------------
 

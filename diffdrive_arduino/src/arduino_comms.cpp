@@ -1,9 +1,17 @@
+/**
+ * Taken from: diffdrive_arduino | Articulated Robotics.
+ * Based on: https://github.com/ros-controls/ros2_control_demos/tree/master/example_2
+ * Also considering: https://github.com/buzzology/diffdrive
+ * Additional comments and modifications: DanielFLopez1620
+ * Description: Arduino commands implementation based on the serial connection.
+ */
+
 // ---------------------- CPP standard headers required -----------------------
-#include <sstream>
-#include <cstdlib>
+#include <sstream>  // String stream headers
+#include <cstdlib>  // C header
 
 // ----------------------- ROS2 Headers Required ------------------------------
-#include <rclcpp/rclcpp.hpp>
+#include <rclcpp/rclcpp.hpp>  // ROS2 Client library for C++
 
 // ----------------------- Controller's dependencies --------------------------
 #include "diffdrive_arduino/arduino_comms.h"
@@ -24,7 +32,7 @@ void ArduinoComms::setup(const std::string &serial_device, int32_t baud_rate,
     serial::Timeout tt = serial::Timeout::simpleTimeout(timeout_ms);
     serial_conn_.setTimeout(tt);
     serial_conn_.open();
-}
+}  // ArduinoComms::setup()
 
 /**
  * Send serial message with empty content (\\r)
@@ -32,7 +40,8 @@ void ArduinoComms::setup(const std::string &serial_device, int32_t baud_rate,
 void ArduinoComms::sendEmptyMsg()
 {
     std::string response = sendMsg("\r");
-}
+
+} // ArduinoComms::sendEmptyMsg()
 
 /**
  * Send message to read encoders and update their value.
@@ -54,7 +63,8 @@ void ArduinoComms::readEncoderValues(int &val_1, int &val_2)
     // Convert string values to integers and update encoder values
     val_1 = std::atoi(token_1.c_str());
     val_2 = std::atoi(token_2.c_str());
-}
+
+} // ArduinoComms::readEncoderValues()
 
 /**
  * Send message to set PWM of the motors (0 - 255)
@@ -67,7 +77,8 @@ void ArduinoComms::setMotorValues(int val_1, int val_2)
     std::stringstream ss;
     ss << "m " << val_1 << " " << val_2 << "\r";
     sendMsg(ss.str(), false);
-}
+
+} // ArduinoComms::setMotorValues
 
 /**
  * Send message to update PID constants.
@@ -82,8 +93,8 @@ void ArduinoComms::setPidValues(float k_p, float k_d, float k_i, float k_o)
     std::stringstream ss;
     ss << "u " << k_p << ":" << k_d << ":" << k_i << ":" << k_o << "\r";
     sendMsg(ss.str());
-}
 
+} // ArduinoComms::setPidValues
 
 /**
  * Method oriented to communicate the controller with the Arduino via Serial,
@@ -106,4 +117,5 @@ std::string ArduinoComms::sendMsg(const std::string &msg_to_send, bool print_out
     }
 
     return response;
-}
+
+} // ArduinoComms::sendMsg
