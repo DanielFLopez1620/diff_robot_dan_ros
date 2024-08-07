@@ -1,0 +1,62 @@
+---
+# Params for the robot (real or simulated) for ros2_control controllers
+
+# Controller manager is oriented to define the ros2_controllers to use
+
+controller_manager:
+  ros__parameters:
+    update_rate: 30  # Hz
+
+    # Differential controller
+    diff_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    # Joint position broadcaster
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# Differential controller parameters
+diff_controller:
+  ros__parameters:
+    # Controller update rate
+    publish_rate: 30.0
+
+    # Continuous joints of URDF
+    left_wheel_names: ['shaft_left_to_motor']
+    right_wheel_names: ['shaft_right_to_motor']
+
+    # URDF and model related models:
+    wheels_per_side: 1
+    wheel_separation: 0.2055
+    wheel_radius: 0.033475
+
+    # Frames of interest
+    base_frame_id: base_link
+
+    # cmd_vel set up
+    use_stamped_vel: false
+
+    # Linear velocity parameters
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.has_jerk_limits: true
+    linear.x.max_velocity: 0.0
+    linear.x.min_velocity: 0.0
+    linear.x.max_acceleration: 0.0
+    linear.x.min_acceleration: 0.0
+    linear.x.max_jerk: 0.0
+    linear.x.min_jerk: 0.0
+    
+    # Angular velocity parameters
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.has_jerk_limits: true
+    angular.z.max_velocity: 0.0
+    angular.z.min_velocity: 0.0
+    angular.z.max_acceleration: 0.0
+    angular.z.min_acceleration: 0.0
+    angular.z.max_jerk: 0.0
+    angular.z.min_jerk: 0.0
+
+# joint_state_broadcaster:
+#   ros__parameters:

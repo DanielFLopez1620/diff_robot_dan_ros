@@ -1,0 +1,31 @@
+---
+# Data obtained after running camera_calibration package in Raspberry Pi
+# with Ubuntu 22.04 with ROS2 Humble installed.
+
+image_width: 640
+image_height: 480
+camera_name: "Microsoft Corp. LifeCam HD-3000"
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [770.11537, 0., 334.07364,
+         0., 770.66853, 165.22181,
+         0., 0., 1.]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.166555, -0.773244, -0.021328, -0.001870, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  # Data 4 x 3
+  data: [777.63063, 0., 333.91757, 0.,
+         0., 768.38194, 159.47063, 0.,
+         0., 0., 1., 0.]

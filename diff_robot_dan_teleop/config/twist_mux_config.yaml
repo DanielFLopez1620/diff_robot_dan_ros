@@ -1,0 +1,16 @@
+---
+# Mux configuration for considering raw cmd_vel and nav2 cmd_vel
+twist_mux:
+  ros__parameters:
+    # Consider the next topics
+    topics:
+      navigation:
+        # Navigation cmd_vel
+        topic: cmd_vel
+        timeout: 0.5
+        priority: 10
+      joystick:
+        # Joystick mvoement cmd_vel
+        topic: cmd_vel_joy
+        timeout: 0.5
+        priority: 100

@@ -1,0 +1,70 @@
+---
+# Params for the robot (real or simulated) for ros2_control controllers
+
+# Controller manager is oriented to define the ros2_controllers to use
+
+controller_manager:
+  ros__parameters:
+    # Update rate for the controller
+    update_rate: 30
+
+    # Differential controller (diffdrive_arduino)
+    diff_robot_dan_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    # Joint position broadcaster
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# Differential controller parameters
+diff_robot_dan_controller:
+  ros__parameters:
+    # Continuous joints of URDF
+    left_wheel_names: ['shaft_left_to_motor']
+    right_wheel_names: ['shaft_right_to_motor']
+
+    # URDF related params
+    wheel_separation: 0.2055
+    wheel_radius: 0.033475
+
+    # Wheel additional considerations
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    # Controller update rate
+    publish_rate: 30.0
+
+    # Frames of interest to the controller
+    odom_frame_id: odom
+    base_frame_id: base_link
+
+    # Covariance and statistical considerations for pose
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+    # Boolean set ups related with odom, control and velocity
+    open_loop: false
+    enable_odom_tf: true
+    use_stamped_vel: false
+
+    # Linear velocity parameters
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.has_jerk_limits: false
+    linear.x.max_velocity: 10.0
+    linear.x.min_velocity: -10.0
+    linear.x.max_acceleration: 10.0
+    linear.x.max_jerk: 0.0
+    linear.x.min_jerk: 0.0
+
+    # Angular velocity parameters
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.has_jerk_limits: false
+    angular.z.max_velocity: 10.0
+    angular.z.min_velocity: -10.0
+    angular.z.max_acceleration: 10.0
+    angular.z.min_acceleration: -10.0
+    angular.z.max_jerk: 0.0
+    angular.z.min_jerk: 0.0

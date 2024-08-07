@@ -1,0 +1,6 @@
+---
+# Base configuration params for gazebo
+gazebo:
+  ros__parameters:
+    # Set rate for simulation
+    publish_rate: 30

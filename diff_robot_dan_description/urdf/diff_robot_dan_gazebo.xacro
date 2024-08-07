@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- ____________________ Macro definitions ______________________-->
+    <xacro:macro name="wheel_material_def" params="side">
+        <gazebo reference="motor_support_${side}">
+        <material>Gazebo/Black</material>
+        </gazebo>
+        <gazebo reference="motor_${side}">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="shaft_${side}">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="coupling_${side}">
+            <material>Gazebo/Gold</material>
+        </gazebo>
+        <gazebo reference="ring_${side}">
+            <material>Gazebo/Blue</material>
+        </gazebo>
+        <gazebo reference="neumatic_${side}">
+            <material>Gazebo/DarkGrey</material>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:macro name="small_hex_material" params="num">
+        <gazebo reference="hex_support_s${num}">
+            <material>Gazebo/Gold</material>
+        </gazebo>   
+    </xacro:macro>
+
+    <xacro:macro name="medium_hex_material" params="num">
+        <gazebo reference="hex_support_m${num}">
+            <material>Gazebo/Gold</material>
+        </gazebo>   
+    </xacro:macro>
+
+    <!-- ____________________ Macro implementations ______________________-->
+    
+    <xacro:wheel_material_def side="left"/>
+    <xacro:wheel_material_def side="right"/>
+
+    <xacro:small_hex_material num="1"/>
+    <xacro:small_hex_material num="2"/>
+    <xacro:small_hex_material num="3"/>
+    <xacro:small_hex_material num="4"/>
+
+    <xacro:medium_hex_material num="1"/>
+    <xacro:medium_hex_material num="2"/>
+    <xacro:medium_hex_material num="3"/>
+    <xacro:medium_hex_material num="4"/>
+    <xacro:medium_hex_material num="5"/>
+    <xacro:medium_hex_material num="6"/>
+
+    <!-- ____________________ Other definitions __________________________-->
+    <gazebo reference="base_platform">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    
+    <gazebo reference="battery_holder">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="battery_1">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="battery_2">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="arduino">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    <gazebo reference="driver">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="center_wheel_support">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="roll_support">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="central_shaft">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="central_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="sup_platform">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="raspberry">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="lidar_base">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="lidar">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="power_bank_support">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="power_bank">
+        <material>Gazebo/White</material>
+    </gazebo>
+    <gazebo reference="camera">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+    <gazebo reference="voltage_regulator_support">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="voltage_regulator">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference="central_wheel">
+        <mu1 value="0.005"/>
+        <mu2 value="0.005"/>
+    </gazebo>
+
+    <gazebo reference="neumatic_right">
+        <mu1 value="0.9"/>
+        <mu2 value="0.9"/>
+    </gazebo>
+
+    <gazebo reference="neumatic_left">
+        <mu1 value="0.9"/>
+        <mu2 value="0.9"/>
+    </gazebo>
+
+</robot>

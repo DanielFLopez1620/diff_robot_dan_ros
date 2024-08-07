@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>diffdrive_arduino</name>
+  <version>0.0.1</version>
+  <description>Provides an interface between diff_drive_controller and an Arduino.</description>
+
+  <maintainer email="josh.newans@gmail.com">Josh Newans</maintainer>
+  <author email="josh.newans@gmail.com">Josh Newans</author>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>hardware_interface</depend>
+  <depend>controller_manager</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  <depend>serial</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+  
+</package>
