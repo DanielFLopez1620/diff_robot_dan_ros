@@ -8,6 +8,8 @@ This is a collection of packages for using the Diff Robot Dan, a ROS2 low-cost d
 
 **Keywords:** ROS2, differential robot, nav2, slam, ros2_control, simulation, DIY
 
+This repo is still under updates of READMEs and formatting, soon there will be a tag for specifying version 1.
+
 ## Construction
 
 The list of the components used to build this robot can be found below:
@@ -26,7 +28,11 @@ The list of the components used to build this robot can be found below:
 - M3 x 30 spacers
 - M3 nuts and screws.
 
-#### Disclaimer:READMEhis is the reason why the robot counts with 2 electrical sources (the powerbank and the 18650 batteries) as the output current from the powerbank was drained very quickly by the combination of all the elements, then I decided to give the Arduino and the motors independent power that comes from the other batteries. 
+
+
+#### Disclaimer:
+
+It was originally intented to just use elements a have to make this project (except for the LIDAR which was acquired for purposes of the robot as I didn't have one previously) and this is reason why the robot counts with 2 electrical sources (the powerbank and the 18650 batteries) as the output current from the powerbank was drained very quickly by the combination of all the elements, then I decided to give the Arduino and the motors independent power that comes from the other batteries. 
 
 Maybe in the future I will buy a better power source for the robot, but for now, if you have a better powerbank than mine and can supply more than 3.5 Amps, you may like to modify the model so you can have only one power source.
 
