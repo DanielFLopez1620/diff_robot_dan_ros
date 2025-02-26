@@ -1,20 +1,28 @@
 # Diff Robot Dan SLAM (Simultatineous Localization and Mapping) Package
 
+![slam_sim_gif](/diff_robot_dan_slam/resources/gazebo_slam_toolbox_run.gif)
+
+![slam_real_gif](/diff_robot_dan_slam/resources/room_slam.gif)
 
 ## Overview
 
-Oriented to use the [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) package with the Diff Robot Dan. 
+Oriented to use the [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) package with the Diff Robot Dan to generate maps and locate inside them. 
 
 ## Usage
 
-### Joystick Teleop:
+### Online Asynchronous Mapping:
 
-The [joystick_teleop.launch.py](/diff_robot_dan_teleop/launch/joystick_teleop.launch.py) incoportates the set up for the Xbox controller, you will need to use the joystick and press RB to generate the move.
+By considering the params present in the [onlin_async_mapper_config.yaml](/diff_robot_dan_slam/config/online_async_mapper_config.yaml) launches the Online Asynchronous Mode of the **slam_toolbox**, so the Diff Robot Dan can generate maps in real life and simulated environments, here do not forget to set the **use_sim_time** argument in the corresponding case, if you want to try it in a Gazebo world, you can use the laberynth in the *diff_robot_dan_gazebo* package:
 
 ```bash
-ros2 launch diff_robot_dan_teleop_joystick joystick_teleop.launch.py
+ros2 launch diff_robot_dan_gazebo robot_in_world.launch.py # Terminal 1
+ros2 launch diff_robot_dan_slam online_async_mapper.launch.py use_sim_time:=true # Terminal 2
 ```
 
-If you are using the real robot, you will need to launch the previous command from the computer you are running the visualizations, slam and navigation algorithms. Do not forget to run the bringup in the raspberry pi of the robot previously. 
+If you want to use it with the real robot, make sure you have run the bringup in the robot pi, and in your PC run:
 
-If you run any simulation with ros2_controller activate, by defualt, the joy teleop will be launched too.This readme will be updated in the future to have more informaction on the package diff_robot_dan_slam.
+```bash
+ros2 launch diff_robot_dan_slam online_async_mapper.launch.py
+```
+
+

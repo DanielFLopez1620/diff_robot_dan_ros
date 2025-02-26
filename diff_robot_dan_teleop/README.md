@@ -24,7 +24,7 @@ If you run any simulation with ros2_controller activate, by defualt, the joy tel
 
 ### Twist Mux:
 
-Use it when you can to incorporate multiple velocity commands (Twists) with the robot, for example, when using Xbox controller and Nav2 at the same time, by default it is called in an the bringup of the robot and the simulations with ros2_control activate.
+Use it when you can to incorporate multiple velocity commands (Twists) with the robot, for example, when using Xbox controller and Nav2 at the same time, by default it is called in an the bringup of the robot and the simulations with ros2_control activated.
 
 ```bash
 ros2 launch diff_robot_dan_teleop_joystick joystick_teleop.launch.py
