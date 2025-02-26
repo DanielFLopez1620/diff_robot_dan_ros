@@ -65,8 +65,8 @@ After that, clone the following repositories by using **https** or **SSH**, to i
 
 ```bash
 cd src/
-https://github.com/joshnewans/serial.git
-https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git
+git clone https://github.com/joshnewans/serial.git
+git clone https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git
 ```
 
 Also, clone this repository:
@@ -94,13 +94,14 @@ Let's make a brief mention on the dependencies used for the package:
 - [URDF](https://wiki.ros.org/urdf) Unified Robot Description Format. 
 - [Xacro](https://wiki.ros.org/xacro) For macro usage in XML language.
 
-If you prefer a manual installation on the dependencies, install the next packages:
+If you prefer a manual installation on the dependencies, rather than using rosdistro, you can install the next packages:
 
     sudo apt install ros-humble-urdf ros-humble-urdf-launch ros-humble-xacro
     sudo apt install ros-humble-slam-toolbox
     sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers
     sudo apt install gazebo-ros gazebo-ros2-control
     sudo apt install ros-humble-nav2*
+    sudo apt install ros-humble-v4l2-camera
 
 ### Building from Source
 
